@@ -27,7 +27,7 @@ public class LoggedFilter implements Filter {
     		request.setAttribute("flash", "por favor, ingresa al sistema" + "usuario: "+ username);
 
     		RequestDispatcher dispatcher = request.getServletContext()
-      		      .getRequestDispatcher("/login.jsp");
+      		      .getRequestDispatcher("/vistas/login.jsp");
       		    dispatcher.forward(request, response);
 		}
 	}

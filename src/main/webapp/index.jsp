@@ -27,7 +27,7 @@
 			<div class="col-4 ">
 				<h2>Bienvenidos a la Secretaria de Turismo de La Tierra Media</h2>
 				<br>
-				<a class="btn btn-primary" href="login.jsp" role="button" >Seguir</a>
+				<a class="btn btn-primary" href="vistas/login.jsp" role="button" >Seguir</a>
 			</div>
 		</div>
 	</div>

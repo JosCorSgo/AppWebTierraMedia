@@ -1,4 +1,4 @@
-package controlador;
+package controlador.usuarios;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,8 +15,8 @@ import persistencia.genericos.DAOFactory;
 import persistencia.genericos.UsuarioDAO;
 import servicios.UsuarioService;
 
-@WebServlet("/usuarios")
-public class UsuariosServlet extends HttpServlet implements Servlet {
+@WebServlet("/listarusuarios.do")
+public class ListarUsuariosServlet extends HttpServlet implements Servlet {
 	
 	private static final long serialVersionUID = -1871994986131231476L;
 	private UsuarioService usuarioService;
@@ -37,12 +37,12 @@ public class UsuariosServlet extends HttpServlet implements Servlet {
      		
      		req.setAttribute("listaUsuarios", listaUsuarios);
 
-    		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/usuarios.jsp");
+    		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/vistas/usuarios/listar.jsp");
     		dispatcher.forward(req, resp);
 
 		} else {
 				req.setAttribute("flash", "No se encontraron clientes activos ");
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/usuarios.jsp");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/vistas/usuarios/listar.jsp");
 		  		    dispatcher.forward(req, resp);
 		}
 	    	

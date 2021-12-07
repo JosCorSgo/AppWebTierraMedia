@@ -1,4 +1,4 @@
-package controlador;
+package controlador.usuarios;
 
 import java.io.IOException;
 
@@ -9,16 +9,16 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/comprar.do")
-public class ComprarServlet extends HttpServlet implements Servlet {
+@WebServlet("/itinerario.do")
+public class ItinerarioServlet extends HttpServlet implements Servlet {
 
-	private static final long serialVersionUID = -2327681578618570633L;
+ 	private static final long serialVersionUID = 3713847803267341308L;
 
-    @Override
+	@Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	
-    	req.getServletContext().getRequestDispatcher("/ofertador.jsp").forward(req, resp);
+    	req.getServletContext().getRequestDispatcher("/vistas/itinerario.jsp").forward(req, resp);
     }
 
-
+	
 }

@@ -23,6 +23,12 @@ public class UsuarioService {
      	Usuario usuario =  usuarioDAO.buscarPorEmailyPassword(email, password);
     	return usuario;
 	}
+ 	
+ 	public Usuario buscarID(long id) {
+ 		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+     	Usuario usuario =  usuarioDAO.buscarPorIdUsuario(id);
+    	return usuario;
+ 	}
 
  	
  	

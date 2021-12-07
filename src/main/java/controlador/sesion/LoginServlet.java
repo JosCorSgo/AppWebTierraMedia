@@ -1,4 +1,4 @@
-package controlador;
+package controlador.sesion;
 
 import java.io.IOException;
 
@@ -41,15 +41,15 @@ public class LoginServlet extends HttpServlet {
     		req.getSession().setAttribute("usr", usr);
     		
     		if (usr.getEsAdmin()) {
-    			resp.sendRedirect("./vistas/administrar.jsp");	
+    			resp.sendRedirect("vistas/administrar.jsp");	
     		} else {
-    			resp.sendRedirect("./vistas/clientes.jsp");
+    			resp.sendRedirect("vistas/clientes.jsp");
     		}
     		
 		} else {
 			req.setAttribute("flash", "email o password incorrectos ");
 			RequestDispatcher dispatcher = getServletContext()
-	  		      .getRequestDispatcher("/login.jsp");
+	  		      .getRequestDispatcher("/vistas/login.jsp");
 	  		    dispatcher.forward(req, resp);
 		}
     }

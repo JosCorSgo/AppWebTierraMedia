@@ -15,7 +15,7 @@
 		<div class= "row justify-content-center text-center weigth= 400" >
 			<div class="col-4 ">
 			<h2>Login</h2>
-			<form action="login" method="post" >
+			<form action="../login" method="post" >
 			  <div class="mb-3">
 			    <label for="inputEmail" class="form-label">Email</label>
 			    <input type="email" class="form-control" id="exampleInputEmail1" name="email"  aria-describedby="emailHelp">
@@ -28,7 +28,7 @@
   
 			  <button type="submit" class="btn btn-primary">Ingresar</button>
 			  <br><br>
-			  <a href="./clientes.jsp">Ingresar como invitado</a>
+			  <a href="clientes.jsp">Ingresar como invitado</a>
 			</form>
 			<% String flash = (String) request.getAttribute("flash"); %>
 			<% if (flash != null) {%>

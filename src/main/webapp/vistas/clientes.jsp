@@ -38,10 +38,10 @@
 		          <a class="nav-link" href="promociones.jsp">Promociones</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" href="comprar.do">Comprar</a>
+		          <a class="nav-link" href="../comprar.do">Comprar</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link " aria-current="page" href="itinerario.do">Ver mi itinerario</a>
+		          <a class="nav-link " aria-current="page" href="../itinerario.do">Ver mi itinerario</a>
 		        </li>
 		      </ul>
 		      
@@ -66,7 +66,7 @@
 		          			<li>Preferencia: ${usr.preferencia}</li>
 		          			<li>Presupuesto: ${usr.presupuesto}</li>
 		          			<li>Tiempo: ${usr.tiempoDisponible}</li>
-		          			<li><a class="dropdown-item" href="logout">Cerrar sesion</a></li>
+		          			<li><a class="dropdown-item" href="../logout">Cerrar sesion</a></li>
 		          		</c:otherwise>
 		          		  
 		          	</c:choose>

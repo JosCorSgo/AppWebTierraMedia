@@ -1,4 +1,4 @@
-package controlador;
+package controlador.sesion;
 
 import java.io.IOException;
 
