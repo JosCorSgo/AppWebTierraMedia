@@ -73,8 +73,8 @@
 						</c:if>
 
 						<td><c:if test="${usr.esAdmin == true}">
-								<a href="/AppWebTierraMedia/editarusuario.do?id=${usuario.idUsuario}" 	class="btn btn-light rounded-0" role="button"><i class="bi bi-pencil-fill">Editar</i></a>
-								<a href="/AppWebTierraMedia/desactivarusuario.do?id=${usuario.idUsuario}" class="btn btn-danger rounded" role="button"><i class="bi bi-x-circle-fill">Desactivar</i></a>
+								<a href="editarusuario.do?id=${usuario.idUsuario}" 	class="btn btn-light rounded-0" role="button"><i class="bi bi-pencil-fill">Editar</i></a>
+								<a href="desactivarusuario.do?id=${usuario.idUsuario}" class="btn btn-danger rounded" role="button"><i class="bi bi-x-circle-fill">Desactivar</i></a>
 							</c:if>
 
 						</td>
