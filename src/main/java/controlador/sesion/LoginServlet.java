@@ -11,8 +11,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import modelo.Usuario;
 import servicios.UsuarioService;
 
-
-
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 

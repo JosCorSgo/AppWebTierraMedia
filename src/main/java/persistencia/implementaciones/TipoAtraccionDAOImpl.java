@@ -31,27 +31,7 @@ public class TipoAtraccionDAOImpl implements TipoAtraccionDAO {
 		}
 	}
 
-	@Override
-	public ArrayList<TipoAtraccion> buscarTodos() {
-		try {
-			String sql = "SELECT id_tipo_atraccion,descripcion_tipo_atraccion FROM Tipos_atraccion WHERE activo = 1";
-
-			Connection conn = ProveedorDeConeccion.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			ResultSet resultados = statement.executeQuery();
-
-			ArrayList<TipoAtraccion> tiposAtr = new ArrayList<TipoAtraccion>();
-			while (resultados.next()) {
-				tiposAtr.add(toTipoAtraccion(resultados));
-			}
-
-			statement.close();
-			return tiposAtr;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-
+	
 	private TipoAtraccion toTipoAtraccion(ResultSet resultados) throws SQLException {
 		// COLUMNAS DE LA BD: id_tipo_atraccion, descripcion_tipo_atraccion
 		Integer id_tipo_atraccion = resultados.getInt(1);
@@ -106,4 +86,53 @@ public class TipoAtraccionDAOImpl implements TipoAtraccionDAO {
 			throw new MissingDataException(e);
 		}
 	}
+	
+	
+	@Override
+    public ArrayList<TipoAtraccion> buscarTodos() {
+        try {
+            String sql = "SELECT * FROM Tipos_atraccion";
+
+            Connection conn = ProveedorDeConeccion.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            ResultSet resultados = statement.executeQuery();
+
+            ArrayList<TipoAtraccion> tiposAtr = new ArrayList<TipoAtraccion>();
+            while (resultados.next()) {
+                tiposAtr.add(toTipoAtraccion(resultados));
+            }
+
+            statement.close();
+            return tiposAtr;
+        } catch (Exception e) {
+            throw new MissingDataException(e);
+        }
+    }
+
+@Override
+    public ArrayList<TipoAtraccion> buscarActivos() {
+        try {
+            String sql = "SELECT * FROM Tipos_atraccion WHERE activo = '1'";
+
+            Connection conn = ProveedorDeConeccion.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            ResultSet resultados = statement.executeQuery();
+
+            ArrayList<TipoAtraccion> tiposAtr = new ArrayList<TipoAtraccion>();
+            while (resultados.next()) {
+                tiposAtr.add(toTipoAtraccion(resultados));
+            }
+
+            statement.close();
+            return tiposAtr;
+        } catch (Exception e) {
+            throw new MissingDataException(e);
+        }
+    }
+	
+	
+	
+	
+	
+	
 }

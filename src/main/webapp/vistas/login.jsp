@@ -15,7 +15,7 @@
 		<div class= "row justify-content-center text-center weigth= 400" >
 			<div class="col-4 ">
 			<h2>Login</h2>
-			<form action="../login" method="post" >
+			<form action="//localhost:8080/AppWebTierraMedia/login" method="post" >
 			  <div class="mb-3">
 			    <label for="inputEmail" class="form-label">Email</label>
 			    <input type="email" class="form-control" id="exampleInputEmail1" name="email"  aria-describedby="emailHelp">

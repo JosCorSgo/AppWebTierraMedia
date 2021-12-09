@@ -20,17 +20,19 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	public int insertar(Usuario usuario) {
 		
 		try {
-			String sql = "INSERT INTO USUARIOS (NOMBRE, DINERO, TIEMPO, POSX, POSY, ID_TIPO_ATRACCION) VALUES (?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO USUARIOS (NOMBRE, DINERO, TIEMPO, POSX, POSY, EMAIL, PASS, ESTADO, ESADMIN, ID_TIPO_ATRACCION) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			Connection conn = ProveedorDeConeccion.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
-			//TIPO DE LA BD (TEXTO nombre, TEXTO TipoAtraccion, INTEGER presupuesto, REAL tiempoDisponible)
 			statement.setString(1, usuario.getNombre());
 			statement.setInt(2, usuario.getPresupuesto());
 			statement.setDouble(3, usuario.getTiempoDisponible());
-			statement.setDouble(4, usuario.getPosX());
-			statement.setDouble(5, usuario.getPosY());
-			statement.setLong(6, obtegerIdTipoAtraccion(usuario));
-
+			statement.setDouble(4, usuario.getPosX()); 
+			statement.setDouble(5, usuario.getPosY()); 
+			statement.setString(6, usuario.getEmail());
+			statement.setString(7, usuario.getPassword());
+			statement.setInt(8, convertirBooleano(usuario.getEstaActivo()));
+			statement.setInt(9, convertirBooleano(usuario.getEsAdmin()));
+			statement.setLong(10, obtegerIdTipoAtraccion(usuario)); 
 			int rows = statement.executeUpdate();
 
 			statement.close();
@@ -55,9 +57,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 
 	public int actualizar(Usuario usuario) {
-		
 		try {
-			String sql = "UPDATE USUARIOS SET Nombre = ?, dinero = ?, tiempo = ?, PosX = ?, PosY = ?, id_tipo_atraccion = ? WHERE id_usuario = ?";
+			String sql = "UPDATE USUARIOS SET nombre = ?, dinero = ?, tiempo = ?, PosX = ?, PosY = ?, email = ?, pass = ?, estado = ?, esAdmin = ?, id_tipo_atraccion = ? WHERE id_usuario = ?";
 			Connection conn = ProveedorDeConeccion.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, usuario.getNombre());
@@ -65,8 +66,41 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 			statement.setDouble(3, usuario.getTiempoDisponible());
 			statement.setDouble(4, usuario.getPosX()); 
 			statement.setDouble(5, usuario.getPosY()); 
-			statement.setLong(6, obtegerIdTipoAtraccion(usuario)); 
-			statement.setLong(7, usuario.getIdUsuario());
+			statement.setString(6, usuario.getEmail());
+			statement.setString(7, usuario.getPassword());
+			statement.setInt(8, convertirBooleano(usuario.getEstaActivo()));
+			statement.setInt(9, convertirBooleano(usuario.getEsAdmin()));
+			statement.setLong(10, obtegerIdTipoAtraccion(usuario)); 
+			statement.setLong(11, usuario.getIdUsuario());
+			int rows = statement.executeUpdate();
+			statement.close();
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+	
+	
+	private int convertirBooleano(boolean valor) {
+		if (valor == true) {
+			return 1;			
+		} else {
+			if (valor == false ) {
+				return 0;
+			}
+		}
+		return 0;
+	}
+
+
+	public int desactivar(long id) {
+		
+		try {
+			String sql = "UPDATE USUARIOS SET estado = 0 WHERE id_usuario = ?";
+			Connection conn = ProveedorDeConeccion.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setLong(1, id);
+
 			int rows = statement.executeUpdate();
 
 			statement.close();
@@ -74,9 +108,9 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
-		
-		
 	}
+	
+
 
 	public int borrar(Usuario usuario) {
 		
@@ -93,7 +127,6 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
-		
 	}
 
 	public Usuario buscarPorIdUsuario(long idUsuario) {
@@ -168,7 +201,6 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		
 	}
 	
-	
 
 	public ArrayList<Usuario> buscarTodos() {
 		try {
@@ -191,8 +223,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
-	}
-	
+	}	
 	
 
 	private Usuario toUsuario(ResultSet resultados) throws SQLException {
@@ -221,10 +252,10 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		Boolean esAdmin = booleano(resultados.getInt(10));
 		TipoAtraccion preferencia =  TipoAtraccion.valueOf(resultados.getString(11).toUpperCase());
 		Usuario usuario = new Usuario(idUsuario, nombre , dinero, tiempo, new Posicion(posX, posY), email, password, estado, esAdmin,  preferencia);
-		
+
 		ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
 		itinerarioDAO.itinerarioeHistorialDelUsuario(usuario);
-		
+
 		return usuario;
 	}
 
@@ -237,6 +268,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		}
 		return null;
 	}
+
 
 
 

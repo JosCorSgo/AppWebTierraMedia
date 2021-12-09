@@ -7,39 +7,43 @@
 <jsp:include page="/partials/head.jsp"></jsp:include>
 </head>
 <body>
+	<jsp:include page="/partials/nav.jsp"></jsp:include>
+
 	<main class="container">
-	
-		<form action="editarusuario.do" method="post">
-			<input type="hidden" name="id" value="${usuario.idUsuario}">
+		<div class="alert alert-danger">
+			<% String flash = (String) request.getAttribute("flash"); %>
+			<% if (flash != null && flash != "") {%>
+			<%= flash%>
+			<% }%>	
+		</div>
+		<form action="crearusuario.do" method="post">
 			<div class="modal-body">
 				<div class="mb-3">
 					<label for="nombre" class="col-form-label">Nombre:</label> <input
 						type="text" class="form-control" id="nombre" name="nombre"
-						required value="${usuario.nombre}">
+						required >
 				</div>
 
 				<div class="mb-3">
 					<label for="email" class="col-form-label">Email:</label> <input
-						type="email" class="form-control" id="email" name="email" required
-						value="${usuario.email}">
+						type="email" class="form-control" id="email" name="email" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="pass" class="col-form-label">Password:</label> <input
-						type="password" class="form-control" id="pass" name="pass" required
-						value="${usuario.password}">
+						type="password" class="form-control" id="pass" name="pass" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="presupuesto" class="col-form-label">Presupuesto:</label>
 					<input type="number" class="form-control" id="presupuesto"
-						name="presupuesto" min="1" required value="${usuario.presupuesto}">
+						name="presupuesto" min="1" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="tiempo" class="col-form-label">Tiempo disponible:</label> 
 					<input type="number" class="form-control" id="tiempo"
-						name="tiempo" min="1" required value="${usuario.tiempoDisponible}">
+						name="tiempo" min="1" required>
 				</div>
 
 				<div class="mb-3">
