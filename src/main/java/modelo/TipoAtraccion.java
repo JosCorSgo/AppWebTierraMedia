@@ -2,12 +2,26 @@ package modelo;
 
 public enum TipoAtraccion {
 
-	// IMPORTANTE. Debe respetarse este orden en la BD.
-	AVENTURA, PAISAJES, DEGUSTACION;
+	AVENTURA(1, true), PAISAJES(2, true), DEGUSTACION(3, true);
 
-	/**
-	 * Opcion para evitar errores si se llegara a cambiar el orden: agregar un
-	 * metodo que devuelva para cada tipo el ID utilizando ese método en lugar del
-	 * ordinal + 1 en el DAO, o atributo con getter
-	 **/
+	private int id;
+
+	private boolean estaActivo;
+
+	TipoAtraccion(int id, boolean estaActivo) {
+		this.id = id;
+		this.estaActivo = estaActivo;
+	}
+
+	public int getID() {
+		return this.id;
+	}
+
+	public boolean estaActivo() {
+		return estaActivo;
+	}
+
+	public void setEstado(boolean estaActivo) {
+		this.estaActivo = estaActivo;
+	}
 }
