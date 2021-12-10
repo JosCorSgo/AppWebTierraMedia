@@ -1,62 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Panel de administradores</title>
+
+<!-- font awesome cdn link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- custom ccs file link -->
+<link rel="stylesheet" href="../css/administradores.css">
+
+
 </head>
 <body>
 
-		<!--   nab bar adminstradores  -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <div class="container-fluid">
-		    <a class="navbar-brand" href="#">Navbar</a>
-		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		      <span class="navbar-toggler-icon"></span>
-		    </button>
-		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-		        <li class="nav-item">
-		          <a class="nav-link " href="../listarusuarios.do">Usuarios</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" href="atracciones.jsp">Atracciones</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" href="promociones.jsp">Promociones</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" href="../listarTipos.do">Tipos de Atracciones</a>
-		        </li>
-		      </ul>
-		      
-		      	<div><h2>Panel de administradores</h2></div>
-		      	
-		        <div class="nav-item dropdown">
-		          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-		            Usuario
-		          </a>
-		          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-		            <li><h5><%= (String) session.getAttribute("nombreUsuario")%></h5></li>
-		            <li><a class="dropdown-item" href="#">Datos personales</a></li>
-		            <li><hr class="dropdown-divider"></li>
-		            <li><a class="dropdown-item" href="../logout">Cerrar sesion</a></li>
-		          </ul>
-		        </div>
-		        
-		    </div>
-		  </div>
-		</nav>
-		<!--   nab bar adminstradores  -->
-		
+<header>
+    <div id="menu-bar" class="fas fa-bars"></div>
 
+    <a href="#" class="logo"><span>P</span>anel de Administrador</a>
+    <nav class="navbar">  
+     <a class="nav-link " href="../listarusuarios.do">Usuarios</a>
+     <a class="nav-link" href="atracciones.jsp">Atracciones</a>
+     <a class="nav-link" href="promociones.jsp">Promociones</a>
+     <a class="nav-link" href="../listarTipos.do">Tipos de Atracciones</a>
+
+</nav>
+
+   <div class= "logout">
+      <a class="btn" href="../logout">Cerrar sesion</a>
+   </div>
+
+</header>
+
+
+
+<!-- termina seccion header -->
+
+<!-- custom js file link -->
+<script src="../js/scriptadministradores.js"></script>
 
 </body>
 </html>
