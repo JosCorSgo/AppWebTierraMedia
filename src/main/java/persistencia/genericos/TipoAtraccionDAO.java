@@ -1,5 +1,6 @@
 package persistencia.genericos;
 
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 import modelo.TipoAtraccion;
 
 public interface TipoAtraccionDAO extends GenericDAO<TipoAtraccion> {
+
 
 	public abstract int activar(TipoAtraccion t);
 

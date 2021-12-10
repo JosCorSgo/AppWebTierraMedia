@@ -9,4 +9,5 @@ public interface GenericDAO<T> {
 	public int insertar(T t);
 	public int actualizar(T t);
 	public int borrar(T t);
+
 }

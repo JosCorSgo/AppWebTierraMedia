@@ -33,7 +33,7 @@
 
 		<c:if test="${usr.esAdmin == true}">
 			<div class="mb-3">
-				<a href="/turismo/attractions/create.do" class="btn btn-primary"
+				<a href="crearusuario.do" class="btn btn-primary"
 					role="button"> <i class="bi bi-plus-lg"></i>Agregar usuario
 				</a>
 			</div>
@@ -74,9 +74,12 @@
 
 						<td><c:if test="${usr.esAdmin == true}">
 								<a href="editarusuario.do?id=${usuario.idUsuario}" 	class="btn btn-light rounded-0" role="button"><i class="bi bi-pencil-fill">Editar</i></a>
-								<a href="desactivarusuario.do?id=${usuario.idUsuario}" class="btn btn-danger rounded" role="button"><i class="bi bi-x-circle-fill">Desactivar</i></a>
+								<c:if test="${usuario.estaActivo == true }">
+									<a href="desactivarusuario.do?id=${usuario.idUsuario}"
+										class="btn btn-danger rounded" role="button"><i
+										class="bi bi-x-circle-fill">Desactivar</i></a>
+								</c:if>
 							</c:if>
-
 						</td>
 					</tr>
 				</c:forEach>

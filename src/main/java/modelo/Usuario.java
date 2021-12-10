@@ -1,6 +1,8 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 import persistencia.genericos.AtraccionDAO;
@@ -22,6 +24,7 @@ public class Usuario {
 	private ArrayList<Atraccion> historialDeAtracciones = new ArrayList<Atraccion>();
 	private ArrayList<Producto> itinerario = new ArrayList<Producto>();
 
+	private Map<String, String> errors;
 
 	public Usuario(String nombre, TipoAtraccion preferencia, int presupuesto, double tiempoDisponible) {
 		this.nombre = nombre;
@@ -40,6 +43,7 @@ public class Usuario {
 		this.email = email;
 		this.password = password;
 		this.esAdmin = esAdmin;
+		this.estaActivo = estado;
 	}
 
 
@@ -124,7 +128,7 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "Nombre: " + nombre + ", Preferencia: " + preferencia + ", Presupuesto: " + presupuesto
-				+ ", TiempoDisponible: " + tiempoDisponible;
+				+ ", TiempoDisponible: " + tiempoDisponible+ ", estado: " + estaActivo + ", admin: " + esAdmin;
 	}
 
 
@@ -160,6 +164,14 @@ public class Usuario {
 		return this.posicion.getY();
 	}
 	
+	public Posicion getPosicion() {
+		return this.posicion;
+	}
+
+	public void setPosicion(Posicion posicion) {
+		this.posicion = posicion;
+	}
+
 	public void setPresupuesto(int presupuesto) {
 		this.presupuesto = presupuesto;
 	}
@@ -208,11 +220,11 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public String getContraseña() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setContraseña(String contraseña) {
+	public void setPassword(String contraseña) {
 		this.password = contraseña;
 	}
 
@@ -243,6 +255,36 @@ public class Usuario {
 	public void setEstaActivo(boolean estaActivo) {
 		this.estaActivo = estaActivo;
 	}
-	
 
+	public boolean esValido() {
+		validate();
+		return errors.isEmpty();
+	}
+	
+		
+	public Map<String, String> getErrors() {
+		return this.errors;
+	}
+
+	public void validate() {
+		errors = new HashMap<String, String>();
+
+		if ( this.nombre == "") {
+			errors.put("nombre", "No debe ser vacio");
+		}
+		if (this.presupuesto <= 0) {
+			errors.put("presupuesto", "Debe ser positivo");
+		}
+		if (this.tiempoDisponible <= 0) {
+			errors.put("tiempo", "Debe ser positivo");
+		}
+		if (this.email == "") {
+			errors.put("email", "No debe ser vacio");
+		}
+		if (this.password == "") {
+			errors.put("", "No debe ser vacio");
+		}
+		
+	}
+	
 }

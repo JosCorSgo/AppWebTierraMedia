@@ -31,26 +31,6 @@ public class TipoAtraccionDAOImpl implements TipoAtraccionDAO {
 		}
 	}
 
-	@Override
-	public ArrayList<TipoAtraccion> buscarTodos() {
-		try {
-			String sql = "SELECT * FROM Tipos_atraccion";
-
-			Connection conn = ProveedorDeConeccion.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			ResultSet resultados = statement.executeQuery();
-
-			ArrayList<TipoAtraccion> tiposAtr = new ArrayList<TipoAtraccion>();
-			while (resultados.next()) {
-				tiposAtr.add(toTipoAtraccion(resultados));
-			}
-
-			statement.close();
-			return tiposAtr;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
 
 	@Override
 	public ArrayList<TipoAtraccion> buscarActivos() {
@@ -162,6 +142,32 @@ public class TipoAtraccionDAOImpl implements TipoAtraccionDAO {
 		}
 	}
 
+	
+	
+	@Override
+    public ArrayList<TipoAtraccion> buscarTodos() {
+        try {
+            String sql = "SELECT * FROM Tipos_atraccion";
+
+            Connection conn = ProveedorDeConeccion.getConnection();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            ResultSet resultados = statement.executeQuery();
+
+            ArrayList<TipoAtraccion> tiposAtr = new ArrayList<TipoAtraccion>();
+            while (resultados.next()) {
+                tiposAtr.add(toTipoAtraccion(resultados));
+            }
+
+            statement.close();
+            return tiposAtr;
+        } catch (Exception e) {
+            throw new MissingDataException(e);
+        }
+    }
+
+	
+
+
 	@Override
 	public int activar(TipoAtraccion t) {
 		try {
@@ -178,5 +184,6 @@ public class TipoAtraccionDAOImpl implements TipoAtraccionDAO {
 			throw new MissingDataException(e);
 		}
 	}
+
 
 }
