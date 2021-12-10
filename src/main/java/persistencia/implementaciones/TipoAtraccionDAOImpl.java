@@ -31,13 +31,70 @@ public class TipoAtraccionDAOImpl implements TipoAtraccionDAO {
 		}
 	}
 
-	
-	private TipoAtraccion toTipoAtraccion(ResultSet resultados) throws SQLException {
+
+	@Override
+	public ArrayList<TipoAtraccion> buscarActivos() {
+		try {
+			String sql = "SELECT * FROM Tipos_atraccion WHERE activo = 1";
+
+			Connection conn = ProveedorDeConeccion.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			ResultSet resultados = statement.executeQuery();
+
+			ArrayList<TipoAtraccion> tiposAtr = new ArrayList<TipoAtraccion>();
+			while (resultados.next()) {
+				tiposAtr.add(toTipoAtraccion(resultados));
+			}
+
+			statement.close();
+			return tiposAtr;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public ArrayList<TipoAtraccion> buscarInactivos() {
+		try {
+			String sql = "SELECT * FROM Tipos_atraccion WHERE activo = 0";
+
+			Connection conn = ProveedorDeConeccion.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			ResultSet resultados = statement.executeQuery();
+
+			ArrayList<TipoAtraccion> tiposAtr = new ArrayList<TipoAtraccion>();
+			while (resultados.next()) {
+				tiposAtr.add(toTipoAtraccion(resultados));
+			}
+
+			statement.close();
+			return tiposAtr;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public TipoAtraccion toTipoAtraccion(ResultSet resultados) throws SQLException {
 		// COLUMNAS DE LA BD: id_tipo_atraccion, descripcion_tipo_atraccion
 		Integer id_tipo_atraccion = resultados.getInt(1);
 		String descripcion_tipo_atraccion = resultados.getString(2);
+		Boolean estaActivo = booleano(resultados.getInt(3));
 
-		return TipoAtraccion.valueOf(descripcion_tipo_atraccion);
+		TipoAtraccion tipo = TipoAtraccion.valueOf(descripcion_tipo_atraccion);
+		tipo.setEstado(estaActivo);
+
+		return tipo;
+	}
+
+	private Boolean booleano(int valor) {
+		if (valor == 0) {
+			return false;
+		} else {
+			if (valor == 1)
+				return true;
+		}
+		return null;
 	}
 
 	@Override
@@ -67,8 +124,6 @@ public class TipoAtraccionDAOImpl implements TipoAtraccionDAO {
 		return 0;
 	}
 
-	// Funciona, el orden de los tipos en la BD debe ser el mismo que en la
-	// declaracion del enum
 	// Considera 0 = falso (no activo) y 1 = verdadero (activo)
 	@Override
 	public int borrar(TipoAtraccion t) {
@@ -77,7 +132,7 @@ public class TipoAtraccionDAOImpl implements TipoAtraccionDAO {
 			Connection conn = ProveedorDeConeccion.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 
-			statement.setInt(1, (t.ordinal() + 1));
+			statement.setInt(1, t.getID());
 			int rows = statement.executeUpdate();
 
 			statement.close();
@@ -86,6 +141,7 @@ public class TipoAtraccionDAOImpl implements TipoAtraccionDAO {
 			throw new MissingDataException(e);
 		}
 	}
+
 	
 	
 	@Override
@@ -109,30 +165,25 @@ public class TipoAtraccionDAOImpl implements TipoAtraccionDAO {
         }
     }
 
-@Override
-    public ArrayList<TipoAtraccion> buscarActivos() {
-        try {
-            String sql = "SELECT * FROM Tipos_atraccion WHERE activo = '1'";
+	
 
-            Connection conn = ProveedorDeConeccion.getConnection();
-            PreparedStatement statement = conn.prepareStatement(sql);
-            ResultSet resultados = statement.executeQuery();
 
-            ArrayList<TipoAtraccion> tiposAtr = new ArrayList<TipoAtraccion>();
-            while (resultados.next()) {
-                tiposAtr.add(toTipoAtraccion(resultados));
-            }
+	@Override
+	public int activar(TipoAtraccion t) {
+		try {
+			String sql = "UPDATE Tipos_atraccion SET activo = 1 WHERE id_tipo_atraccion = ?";
+			Connection conn = ProveedorDeConeccion.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
 
-            statement.close();
-            return tiposAtr;
-        } catch (Exception e) {
-            throw new MissingDataException(e);
-        }
-    }
-	
-	
-	
-	
-	
-	
+			statement.setInt(1, t.getID());
+			int rows = statement.executeUpdate();
+
+			statement.close();
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+
 }

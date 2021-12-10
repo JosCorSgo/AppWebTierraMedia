@@ -33,7 +33,7 @@
 		          <a class="nav-link" href="promociones.jsp">Promociones</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" href="tiposAtracciones.jsp">Tipos de Atracciones</a>
+		          <a class="nav-link" href="../listarTipos.do">Tipos de Atracciones</a>
 		        </li>
 		      </ul>
 		      
