@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class ProveedorDeConeccion {
 	//private static String url = "jdbc:Sqlite://localhost:8080/TierraMediaBD";
-	//private static String url = "jdbc:Sqlite:E://TierraMediaBD.db";
+	private static String url = "jdbc:Sqlite:C:\\Users\\mauro\\Desktop\\AppWebTierraMedia\\TierraMediaBD.db";
 	//private static String url = "jdbc:Sqlite://TierraMediaBD";
-	private static String url = "jdbc:Sqlite:E://TierraMediaBD.db";
+	//private static String url = "jdbc:Sqlite:E://TierraMediaBD.db";
 	private static Connection connection;
 	
 		

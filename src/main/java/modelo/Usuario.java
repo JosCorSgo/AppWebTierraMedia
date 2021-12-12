@@ -287,4 +287,17 @@ public class Usuario {
 		
 	}
 	
+	public boolean puedePermitirse(Atraccion atraccion) {
+		return atraccion.getCosto() <= this.presupuesto;
+	}
+
+	public boolean puedeAsistir(Atraccion atraccion) {
+		return atraccion.getDuracion() <= this.tiempoDisponible;
+	}
+	
+	public void agregarAlItinerario(Atraccion atraccion) {
+		this.presupuesto -= atraccion.getCosto();
+		this.tiempoDisponible -= atraccion.getDuracion();
+	}
+	
 }
