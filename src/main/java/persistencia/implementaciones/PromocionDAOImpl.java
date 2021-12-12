@@ -83,7 +83,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 		} else if (tipoPromo == 3) {
 			producto = new PromocionAbsoluta(idPromocion, nombre, tipoAtraccion, atraccionesIncluidas, costo, duracion);
 		}
-		
+
 		return producto;
 	}
 	

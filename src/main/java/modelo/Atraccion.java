@@ -5,6 +5,8 @@ public class Atraccion extends Producto {
 	private int cupo;
 	private Posicion ubicacion;
 	private boolean estaActiva;
+	private String descripcion;	
+	private String imagenUrl;
 
 	public Atraccion(String nombre, TipoAtraccion tipo, int costo, double duracion, int cupo) {
 		super(nombre, tipo, costo, duracion);
@@ -56,5 +58,24 @@ public class Atraccion extends Producto {
 		return this.ubicacion.getY();
 	}
 	
+	public String getDescripcion() {
+		return this.descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public String getImagenUrl() {
+		return this.imagenUrl;
+	}
+
+	public void setImagenUrl(String imagenUrl) {
+		this.imagenUrl = imagenUrl;
+	}
+
+	public boolean estaActiva() {
+		return this.estaActiva;
+	}	
 	
 }
