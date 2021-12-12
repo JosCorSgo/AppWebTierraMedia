@@ -6,9 +6,9 @@ import java.util.Map;
 public class Atraccion extends Producto {
 	/*private long idAtraccion;
 	private int cupo;
-	private Posicion ubicacion;
 	private boolean estaActiva;
-	private String descripcion;	
+	private String img;
+	private String descripcion;
 	private String imagenUrl;
 
 	public Atraccion(String nombre, TipoAtraccion tipo, int costo, double duracion, int cupo) {
@@ -16,21 +16,31 @@ public class Atraccion extends Producto {
 		this.cupo = cupo;
 		this.atraccionesIncluidas.add(this);
 	}
-	
-	public Atraccion(long idAtraccion, String nombre, TipoAtraccion tipo, double costo, double duracion, int cupo, Posicion ubicacion ) {
+
+	public Atraccion(long idAtraccion, String nombre, TipoAtraccion tipo, double costo, double duracion, int cupo) {
 		super(idAtraccion, nombre, tipo, costo, duracion);
 		this.cupo = cupo;
 		this.atraccionesIncluidas.add(this);
 		this.idAtraccion = idAtraccion;
-		this.ubicacion = ubicacion;
 	}
 
+	public Atraccion(long idAtraccion, String nombre, TipoAtraccion tipo, int costo, double duracion, int cupo,
+			boolean estaActiva, String img, String descripcion) {
 
+		super(nombre, tipo, costo, duracion);
+		this.cupo = cupo;
+		this.idAtraccion = idAtraccion;
+		this.atraccionesIncluidas.add(this);
+		this.estaActiva = estaActiva;
+		this.img = img;
+		this.setDescripcion(descripcion);
+	}
 
 	@Override
 	public int getCupo() {
 		return this.cupo;
 	}
+
 	public void restarCupo() {
 		this.cupo -= 1;
 	}
@@ -48,25 +58,34 @@ public class Atraccion extends Producto {
 		System.out.println("[-]");
 
 	}
-	
+
 	public long getIdAtraccion() {
 		return this.idAtraccion;
 	}
-	
-	public double getPosX() {
-		return this.ubicacion.getX();
+
+
+	protected void setEstaActiva(boolean estaActiva) {
+		this.estaActiva = estaActiva;
 	}
-	
-	public double getPosY() {
-		return this.ubicacion.getY();
+
+	protected String getImg() {
+		return img;
 	}
-	
-	public String getDescripcion() {
-		return this.descripcion;
+
+	protected void setImg(String img) {
+		this.img = img;
+	}
+
+	protected String getDescripcion() {
+		return descripcion;
 	}
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	protected void setIdAtraccion(long idAtraccion) {
+		this.idAtraccion = idAtraccion;
 	}
 
 	public String getImagenUrl() {
