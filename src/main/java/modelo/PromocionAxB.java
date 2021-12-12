@@ -25,13 +25,14 @@ public class PromocionAxB extends Producto {
 		this.idPromocion = idPromocion;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "-->[Promocion: " + super.getTipo() + "]" + "'" + super.getNombre() + "', Costo: " + super.getCosto()
-				+ " Duracion: " + super.getDuracion() + ".\n" + "    -Atracciones Incluidas: ["
-				+ atraccionesIncluidas.get(0).getNombre() + ", " + atraccionesIncluidas.get(1).getNombre() + ", "
-				+ atraccionesIncluidas.get(2).getNombre() + "]";
+		return "PromocionAxB [idPromocion=" + idPromocion + ", esPromo=" + esPromo + ", atraccionesIncluidas="
+				+ atraccionesIncluidas + "]";
 	}
+
 
 	@Override
 	public void mostrarPorPantalla() {

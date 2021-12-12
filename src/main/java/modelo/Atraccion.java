@@ -5,7 +5,7 @@ public class Atraccion extends Producto {
 	private int cupo;
 	private Posicion ubicacion;
 	private boolean estaActiva;
-	private String descripcion;	
+	private String descripcion = "";	
 	private String imagenUrl;
 
 	public Atraccion(String nombre, TipoAtraccion tipo, int costo, double duracion, int cupo) {

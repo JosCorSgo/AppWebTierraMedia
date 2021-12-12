@@ -9,7 +9,7 @@ public abstract class Producto {
 	private TipoAtraccion tipo;
 	private int costo;
 	private double duracion;
-	protected boolean esPromo;
+	protected boolean esPromo = false;
 	private String descripcion = "";
 	private String urlImagen="";
 	protected ArrayList<Atraccion> atraccionesIncluidas = new ArrayList<Atraccion>();
@@ -128,6 +128,10 @@ public abstract class Producto {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	
+	public String getDescripcion() {
+		return this.descripcion;
 	}
 	
 	

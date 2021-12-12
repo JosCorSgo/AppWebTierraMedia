@@ -73,7 +73,7 @@
 								<h1>${producto.nombre}</h1>
 								<p><h5>{producto.descripcion}</h5><p>
 								<p><h3><span>${producto.costo}</span> monedas  y <span>${producto.duracion}</span> horas de duracion</h3>
-								<p><a href="vistas/confirmarcompra.jsp?idProducto=${producto.idProducto }"
+								<p><a href="confirmarcompra.do?idp=${producto.idProducto }&idu=${usuario.idUsuario }"
 										class="btn btn-primary"> Comprar </a>
 							</div>
 						</div>
@@ -92,11 +92,13 @@
 			</div>
 		</div> <!-- ----  FIN DE LA SEGUNDA FILA CARRUSEL -------- -->
 		
+	
 		<div class="row"> <!-- ----   TERCERA  FILA LISTADO-------- -->
 			<table class="table table-stripped table-hover">
 				<thead>
 					<tr>
 						<th>Producto</th>
+						<th>esPromo</th>
 						<th>Descripcion</th>
 						<th>Costo</th>
 						<th>Duracion</th>
@@ -107,10 +109,12 @@
 					<c:forEach items="${listaProductos}" var="producto">
 						<tr>
 							<td><c:out value="${producto.nombre}"></c:out></td>
-							<td><strong><c:out value="{producto.descripcion}"></c:out></strong></td>
+							<td><c:out value="{producto.esPromo}"></c:out></td>
+							<td><c:out value="{producto.descripcion}"></c:out></td>
 							<td><c:out value="${producto.costo}"></c:out></td>
 							<td><c:out value="${producto.duracion}"></c:out></td>
-							<td><a href="vistas/confirmarcompra.jsp?idProducto=${producto.idProducto }" class="btn btn-light rounded-0" role="button"><i class="bi bi-pencil-fill">Comprar</i></a></td>
+							<td><a href="confirmarcompra.do?idp=${producto.idProducto }&idu=${usuario.idUsuario } " 
+								class="btn btn-light rounded-0" role="button"><i class="bi bi-pencil-fill">Comprar</i></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
