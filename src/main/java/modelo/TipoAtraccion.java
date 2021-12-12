@@ -24,11 +24,11 @@ public enum TipoAtraccion {
 	public void setEstado(boolean estaActivo) {
 		this.estaActivo = estaActivo;
 	}
-	
+
 	public static TipoAtraccion obtenerPorID(int id) {
 		TipoAtraccion tipoAtraccion = null;
-		for(TipoAtraccion tipo: TipoAtraccion.values()) {
-			if(tipo.getID() == id) {
+		for (TipoAtraccion tipo : TipoAtraccion.values()) {
+			if (tipo.getID() == id) {
 				tipoAtraccion = tipo;
 			}
 		}
