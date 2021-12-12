@@ -8,7 +8,7 @@ public class ProveedorDeConeccion {
 	//private static String url = "jdbc:Sqlite://localhost:8080/TierraMediaBD";
 	//private static String url = "jdbc:Sqlite:E://TierraMediaBD.db";
 	//private static String url = "jdbc:Sqlite:TierraMediaBD";
-	private static String url = "jdbc:Sqlite:C:\\Users\\Paula\\Desktop\\TierraMedia2.db";
+	private static String url = "jdbc:Sqlite:C:TierraMedia2.db";
 
 	private static Connection connection;
 	
