@@ -53,7 +53,6 @@
 		</div> <!-- ----  FIN DE LA PRIMERA FILA -------- -->
 		
 		<div class="row"> <!-- ----   SEGUNDA FILA CARRUSEL -------- -->
-			<h5>${listaProductos}</h5>	
 		
 			<div id="carouselExampleCaptions" class="carousel slide"
 				data-bs-ride="carousel">
@@ -67,13 +66,12 @@
 					</div>
 					<c:forEach items="${listaProductos}" var="producto">
 						<div class="carousel-item ">
-							<img src="img/helm-slider-ofertador.jpg" class="d-block w-100"
-								alt="bosque">
+							<img src="https://drive.google.com/uc?export=download&id=${producto.img}" alt="${producto.nombre}">
 							<div class="carousel-caption d-none d-md-block">
 								<h1>${producto.nombre}</h1>
-								<p><h5>{producto.descripcion}</h5><p>
+								<p><h5>${producto.descripcion}</h5><p>
 								<p><h3><span>${producto.costo}</span> monedas  y <span>${producto.duracion}</span> horas de duracion</h3>
-								<p><a href="confirmarcompra.do?idp=${producto.idProducto }&idu=${usuario.idUsuario }"
+								<p><a href="confirmarcompra.do?idp=${producto.idAtraccion }&idu=${usuario.idUsuario }"
 										class="btn btn-primary"> Comprar </a>
 							</div>
 						</div>
@@ -113,7 +111,7 @@
 							<td><c:out value="{producto.descripcion}"></c:out></td>
 							<td><c:out value="${producto.costo}"></c:out></td>
 							<td><c:out value="${producto.duracion}"></c:out></td>
-							<td><a href="confirmarcompra.do?idp=${producto.idProducto }&idu=${usuario.idUsuario } " 
+							<td><a href="confirmarcompra.do?idp=${producto.idAtraccion }&idu=${usuario.idUsuario } " 
 								class="btn btn-light rounded-0" role="button"><i class="bi bi-pencil-fill">Comprar</i></a></td>
 						</tr>
 					</c:forEach>

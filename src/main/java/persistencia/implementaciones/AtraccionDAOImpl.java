@@ -14,7 +14,8 @@ import persistencia.genericos.ProveedorDeConeccion;
 
 public class AtraccionDAOImpl implements AtraccionDAO {
 
-/*	@Override
+/*	codigo viejo
+  @Override
 	public ArrayList<Atraccion> buscarTodos() {
 		try {
 			String sql = "SELECT Atracciones.Id_Atracciones, Atracciones.Nombre, Atracciones.Cupo,"

@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Atraccion extends Producto {
-	/*private long idAtraccion;
+	/* codigo anterior
+	private long idAtraccion;
 	private int cupo;
 	private Posicion ubicacion;
 	private boolean estaActiva;
@@ -109,23 +110,26 @@ public class Atraccion extends Producto {
 	}
     
     //agregue
+	//toAtraccionDAO       idAtraccion,        nombre,               tipo,     costo,        duracion,     cupo,         estaActivo,        img,        descripcion);
     public Atraccion( long idAtraccion, String nombre, TipoAtraccion tipo, int costo, double duracion, int cupo, boolean estaActiva, String img, String descripcion) {
-        super(nombre, tipo,costo, duracion);
+        //super(nombre, tipo,costo, duracion);
+        super(idAtraccion, nombre, tipo, costo, duracion);
         this.cupo = cupo;
         this.idAtraccion = idAtraccion;
         this.atraccionesIncluidas.add(this);
         this.estaActiva = estaActiva;
         this.img = img;
         this.setDescripcion(descripcion);
+        super.esPromo = false;
     }
     
     //agregue
-        public Atraccion( long idAtraccion) {
-        	 super("0",0, 0);
-            this.idAtraccion = idAtraccion;
-            this.atraccionesIncluidas.add(this);
-        }
-        
+    public Atraccion( long idAtraccion) {
+    	 super("0",0, 0);
+        this.idAtraccion = idAtraccion;
+        this.atraccionesIncluidas.add(this);
+    }
+    
         
     //agregue
     public boolean isValid() {

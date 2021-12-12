@@ -142,7 +142,7 @@ public abstract class Producto {
 	
 	//nuevoProducto
 	
-	private long IdProducto;
+	protected long IdProducto;
 	private String nombre;
 	private TipoAtraccion tipo;
 	private int costo;
@@ -160,13 +160,14 @@ public abstract class Producto {
 		this.duracion = duracion;
 	}
 
-
+	// se usa en el constructor de promomocion que viene de toProducto en PromocionDAOImpl
 	public Producto(long id, String nombre, TipoAtraccion tipo, double costo, double duracion) {
 		this.nombre = nombre;
 		this.tipo = tipo;
 		this.costo = (int)costo;
 		this.duracion = duracion;
 		this.IdProducto = id;
+		
 	}
 	//agregue
 	public Producto(String nombre,int costo, double duracion) {

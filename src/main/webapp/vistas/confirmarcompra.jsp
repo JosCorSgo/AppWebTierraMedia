@@ -16,8 +16,7 @@
 	<div class="container ">
 		<div class="row">
 			<div class="carousel-item active">
-				<img src="img/bosque-slider-ofertador.jpg" class="d-block w-100"
-					alt="bosque">
+				<img src="https://drive.google.com/uc?export=download&id=${producto.img}" alt="${producto.nombre}">
 				<div class="carousel-caption d-none d-md-block">
 					<h1>${producto.nombre}</h1>
 					<div>
@@ -42,8 +41,8 @@
 				<tbody>
 					<tr>
 						<td>${producto.nombre}</td>
-						<td>{producto.esPromo}</td>
-						<td>{producto.descripcion}</td>
+						<td> </td>
+						<td>${producto.descripcion}</td>
 						<td>${producto.costo}</td>
 						<td>${producto.duracion}</td>
 					</tr>
@@ -54,7 +53,7 @@
 		
 		<div class="row"><!-- --------------------------------------------------------------------------- -->
 			<div class="col-2">
-				<form action="confirmarcompra.do" method="post">
+				<form action="registrarcompra.do" method="post">
 					<input type="hidden" name="idusuario" value="${usuario.idUsuario}">
 					<input type="hidden" name="idproducto" value="${producto.idProducto}">
 					<button type="submit" class="btn btn-primary">Confirmar

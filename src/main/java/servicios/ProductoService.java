@@ -22,7 +22,8 @@ public class ProductoService {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 		atraccionesDB = atraccionDAO.buscarTodos();   
-		promocionesDB = promocionDAO.buscarTodos(); 
+		//promocionesDB = promocionDAO.buscarTodos(); 
+
 		productosDB.addAll(atraccionesDB);
 		productosDB.addAll(promocionesDB);
 		generarDescripcionesDeProductos();
@@ -47,7 +48,6 @@ public class ProductoService {
 		}else {
 			 producto = atraccionDAO.buscarPorIdAtraccion(idProducto);
 		}
-		
 		return producto;
 	}
 
@@ -113,7 +113,8 @@ public class ProductoService {
 		}
 		
 		Comparator<Producto> ordenarSugerencia = Comparator.comparing(Producto::esPromo)
-				.thenComparing(Producto::getCosto).thenComparing(Producto::getDuracion)
+				.thenComparing(Producto::getCosto)
+				.thenComparing(Producto::getDuracion)
 				.thenComparing(Producto::getNombre);
 		Collections.sort(sugerencia, ordenarSugerencia.reversed());
 		Collections.sort(noPreferidas, ordenarSugerencia.reversed());
