@@ -2,6 +2,7 @@ package controlador.usuarios;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -14,6 +15,7 @@ import modelo.TipoAtraccion;
 import modelo.Usuario;
 import persistencia.genericos.DAOFactory;
 import persistencia.genericos.TipoAtraccionDAO;
+import servicios.TipoAtraccionService;
 import servicios.UsuarioService;
 
 @WebServlet("/crearusuario.do")
@@ -21,23 +23,20 @@ public class CrearUsuarioServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -5912774995689358982L;
 	private UsuarioService usuarioService;
-	//private TipoAtraccionService tipoAtraccionService;
+	private TipoAtraccionService tipoAtraccionService;
 	
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		this.usuarioService = new UsuarioService();
-		//this.tipoAtraccionService = new TipoAtraccionService();
+		this.tipoAtraccionService = new TipoAtraccionService();
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		//cambiar por ArrayList<TipoAtraccion> tiposAtracciones = tipoAtraccionService.listar();
-		 TipoAtraccionDAO tipoAtraccionesDAO = DAOFactory.getTipoAtraccionDAO();
-		 ArrayList<TipoAtraccion> tiposAtracciones = tipoAtraccionesDAO.buscarTodos();
+		List<TipoAtraccion> tiposAtracciones =  tipoAtraccionService.listar();
 		req.setAttribute("tiposAtracciones", tiposAtracciones);
-		//--------------------------------------------------------------------------------------
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/vistas/usuarios/crear.jsp");
 		dispatcher.forward(req, resp);
@@ -65,13 +64,12 @@ public class CrearUsuarioServlet extends HttpServlet {
 			resp.sendRedirect("//localhost:8080/AppWebTierraMedia/listarusuarios.do");
 			
 		} else {
-			//cambiar por ArrayList<TipoAtraccion> tiposAtracciones = tipoAtraccionService.listar();
-			 TipoAtraccionDAO tipoAtraccionesDAO = DAOFactory.getTipoAtraccionDAO();
-			 ArrayList<TipoAtraccion> tiposAtracciones = tipoAtraccionesDAO.buscarTodos();
+			List<TipoAtraccion> tiposAtracciones =  tipoAtraccionService.listar();
+			
 			req.setAttribute("tiposAtracciones", tiposAtracciones);
-			//--------------------------------------------------------------------------------------
 			req.setAttribute("usuario", usuarioCreado);
 			req.setAttribute("flash", "ocurrio algun error - no se pudo agregar el usuario en la BD "+ usuarioService.erroresUsuario(usuarioCreado));
+
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/vistas/usuarios/crear.jsp");
 			dispatcher.forward(req, resp);
 		}

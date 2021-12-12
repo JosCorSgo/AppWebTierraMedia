@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <!-- custom ccs file link -->
-<style>
-     <%@ include file=""%>
+	<style>
+     <%@ include file="../../css/listar.css"%>
 </style>
 
 
@@ -153,7 +153,7 @@
       <div class="box">
       
   
-      <img src="lecode footer.png" alt="">
+      <img src="<c:url value='img/lecodefooter.png'/>" alt=.../>
       
       
       </div>

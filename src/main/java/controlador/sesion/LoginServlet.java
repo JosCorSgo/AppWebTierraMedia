@@ -37,6 +37,7 @@ public class LoginServlet extends HttpServlet {
     		req.getSession().setAttribute("nombreUsuario", usr.getNombre());
     		req.getSession().setAttribute("idUsuario", usr.getIdUsuario());
     		req.getSession().setAttribute("usr", usr);
+    		req.setAttribute("id", usr.getIdUsuario());
     		
     		if (usr.getEsAdmin()) {
     			resp.sendRedirect("vistas/administrar.jsp");	

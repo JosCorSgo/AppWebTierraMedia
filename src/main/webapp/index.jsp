@@ -48,8 +48,8 @@
 
    <form action="//localhost:8080/AppWebTierraMedia/login" method="post">
    <h3>login</h3>
-   <input type="email" class="box" placeholder="usuario">
-   <input type="password" class="box" placeholder="contraseña">
+   <input type="email" class="box" placeholder="email" name="email">
+   <input type="password" class="box" placeholder="contraseña" name="password">
    <button type="submit" class="btn btn-primary">Ingresar</button>
   <!-- <input type="submit" value="iniciar sesion" class="btn">-->
    </form>
@@ -263,7 +263,7 @@
       <div class="box">
       
   
-      <img src="img/lecode footer.png" alt="">
+      <img src="img/lecodefooter.png" alt="">
       
       
       </div>
