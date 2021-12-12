@@ -152,7 +152,12 @@ header .icons i:hover{
     flex-flow: column;
 	position: relative;
 	z-index: 0;
-	margin-top:100px;
+	margin-top:75px;
+	background:url(img/map.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size:cover;
 }
 
 
@@ -234,6 +239,11 @@ header .icons i:hover{
 	border-radius: 5px 5px 0 0;
 	overflow:hidden;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	 background:url(img/blurry.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size:cover;
 }
 
 .content-table thead tr{
@@ -253,7 +263,7 @@ header .icons i:hover{
 }
 
 .content-table tbody tr:nth-of-type(even) {
-	background-color: #FFE5B4;
+	background-color: rgba(255,223,164, .5)
 }
 
 .content-table tbody tr:last-of-type{
