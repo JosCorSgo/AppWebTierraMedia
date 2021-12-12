@@ -1,20 +1,144 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
-<title>Atracciones</title>
+
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>atracciones</title>
+
+<!-- font awesome cdn link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- custom ccs file link -->
+<style>
+     <%@ include file="../css/atracciones.css"%>
+</style>
+
+
+
+
+
+
+
 </head>
 <body>
 
-<h2>Pagina de atracciones</h2>
+
+<!-- comienza seccion header -->
+
+<header>
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"><span>A</span>tracciones</a>
+    
+<nav class="navbar">   
+    <a class="nav-link" href="atracciones.jsp">Atracciones</a>  
+     <a class="nav-link" href="promociones.jsp">Promociones</a>  
+     <a class="nav-link" href="../comprar.do?id=${usr.idUsuario}">Comprar</a>  
+     <a class="nav-link " aria-current="page" href="../itinerario.do?id=${usr.idUsuario}">Ver mi itinerario</a>
+
+</nav>
+
+   <div class= "icons">
+      <i class="fas fa-user" id="login-btn"></i>
+   </div>
+
+</header>
+
+<!-- termina seccion header -->
+
+<!-- login form container -->
+
+<div class="login-form-container">
+
+   <i class="fas fa-times" id="form-close"></i>
+
+   <form action="">
+   <h3>Usuario</h3>
+   
+	<c:choose>
+		    <c:when test="${usuario == 'Invitado'}">
+		          ${usuario}
+		          <a class="btn" href="login.jsp">Iniciar sesion</a>
+		          			
+		         </c:when>
+		         <c:otherwise>
+
+		            <p>Nombre: ${usr.nombre}</p>
+		             <p>Preferencia: ${usr.preferencia}</p>
+		          	<p>Presupuesto: ${usr.presupuesto}</p>
+		          	<p>Tiempo: ${usr.tiempoDisponible}</p>
+		          	<a class="btn" href="../logout">Cerrar sesion</a>
+		          </c:otherwise>
+		          		  
+		        </c:choose>
+   
+
+   </form>
+
+</div>
+
+
+<!-- seccion home empieza -->
+<section class="home" id="home">
+
+
+</section>
+<!-- seccion home termina -->
+
+<section class="footer">
+   <div class="box-container">
+      
+      
+       <div class="box">
+         <h3>hipervinculos github</h3>
+         <a href="https://github.com/ErCanaro" target="_blank" rel="noopener noreferrer">Enzo</a>
+         <a href="https://github.com/JosCorSgo" target="_blank" rel="noopener noreferrer">Jose</a>
+         <a href="https://github.com/PaulaSuescun" target="_blank" rel="noopener noreferrer">Paula</a>
+         <a href="https://github.com/AlanBarani" target="_blank" rel="noopener noreferrer">Alan Barani</a>
+         <a href="#" target="_blank" rel="noopener noreferrer">mauro</a>
+         <a href="#" target="_blank" rel="noopener noreferrer">Ema</a>
+         
+      </div>
+      
+      <div class="box">
+      
+  
+      <img src="../img/lecode footer.png" alt="">
+      
+      
+      </div>
+      
+       <div class="box">
+         <h3>linkedin</h3>
+         <a href="https://www.linkedin.com/in/alan-jes%C3%BAs-barani-9a021a227" target="_blank" rel="noopener noreferrer">Alan Barani</a>
+         <a href="#">instagram</a>
+         <a href="#">twitter</a>
+         <a href="#">linkedin</a>
+      </div>
+       
+   </div>
+   
+   <h1 class="credit">creado por <span>Le Code</span></h1>
+
+</section>
+
+
+<!-- footer section ends -->
+
+
+	
+
+
+<!-- custom js file link -->
+<script src="../js/scriptatracciones.js"></script>
+
+
+
 		
 
 </body>

@@ -2,15 +2,56 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<jsp:include page="/partials/head.jsp"></jsp:include>
+
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>listar</title>
+
+<!-- font awesome cdn link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- custom ccs file link -->
+<style>
+     <%@ include file=""%>
+</style>
+
+
+
+
 </head>
 <body>
+<!-- comienza seccion header -->
 
-	<jsp:include page="/partials/nav.jsp"></jsp:include>
+<header>
+    <div id="menu-bar" class="fas fa-bars"></div>
 
-	<main class="container">
+    <a href="#" class="logo"><span>L</span>istado de usuarios</a>
+    <nav class="navbar">  
+     <a class="nav-link " href="../listarusuarios.do">Usuarios</a>
+     <a class="nav-link" href="atracciones.jsp">Atracciones</a>
+     <a class="nav-link" href="promociones.jsp">Promociones</a>
+     <a class="nav-link" href="../listarTipos.do">Tipos de Atracciones</a>
+
+</nav>
+
+   <div class= "logout">
+      <a class="btn" href="../logout">Cerrar sesion</a>
+   </div>
+
+</header>
+
+<!-- termina seccion header -->
+
+
+<!-- seccion home empieza -->
+<section class="home" id="home">
+
+
+
+	<div class="top-row" id="top-row">
 
 		<c:if test="${flash != null}">
 			<div class="alert alert-danger">
@@ -27,18 +68,16 @@
 			</div>
 		</c:if>
 
-		<div class="bg-light p-4 mb-3 rounded">
-			<h1>Listado de usuarios de la Tierra Media</h1>
-		</div>
-
 		<c:if test="${usr.esAdmin == true}">
 			<div class="mb-3">
 				<a href="crearusuario.do" class="btn btn-primary"
-					role="button"> <i class="bi bi-plus-lg"></i>Agregar usuario
+					role="button"> <i class="fas fa-plus"></i>Agregar usuario
 				</a>
 			</div>
 		</c:if>
-		<table class="table table-stripped table-hover">
+		</div>
+
+		<table class="content-table">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -52,15 +91,16 @@
 				</tr>
 			</thead>
 			<tbody>
+			<tr>
 				<c:forEach items="${listaUsuarios}" var="usuario">
-					<tr>
+					<!-- <tr>-->
 						<td><c:out value="${usuario.idUsuario}"></c:out></td>
 						<td><strong><c:out value="${usuario.nombre}"></c:out></strong></td>
 						<td><c:out value="${usuario.presupuesto}"></c:out></td>
 						<td><c:out value="${usuario.tiempoDisponible}"></c:out></td>
 						<td><c:out value="${usuario.preferencia}"></c:out></td>
 						<c:if test="${usuario.estaActivo == true }">
-							<td><span class="bg-greee" >Activo</span></td>
+							<td><span class="bg-green" >Activo</span></td>
 						</c:if>
 						<c:if test="${usuario.estaActivo == false }">
 							<td><span class="bg-red" >Inactivo</span></td>
@@ -73,11 +113,11 @@
 						</c:if>
 
 						<td><c:if test="${usr.esAdmin == true}">
-								<a href="editarusuario.do?id=${usuario.idUsuario}" 	class="btn btn-light rounded-0" role="button"><i class="bi bi-pencil-fill">Editar</i></a>
+								<a href="editarusuario.do?id=${usuario.idUsuario}" 	class="btn-e" role="button"><i class="fas fa-pencil-alt">Editar</i></a>
 								<c:if test="${usuario.estaActivo == true }">
 									<a href="desactivarusuario.do?id=${usuario.idUsuario}"
-										class="btn btn-danger rounded" role="button"><i
-										class="bi bi-x-circle-fill">Desactivar</i></a>
+										class="btn-a" role="button"><i
+										class="fas fa-times-circle">Desactivar</i></a>
 								</c:if>
 							</c:if>
 						</td>
@@ -86,7 +126,63 @@
 			</tbody>
 		</table>
 
-	</main>
+	<!-- </div> -->
+	
+
+</section>
+<!-- seccion home termina -->
+	
+	
+<!-- footer section starts -->
+
+<section class="footer">
+   <div class="box-container">
+      
+      
+       <div class="box">
+         <h3>hipervinculos github</h3>
+         <a href="https://github.com/ErCanaro" target="_blank" rel="noopener noreferrer">Enzo</a>
+         <a href="https://github.com/JosCorSgo" target="_blank" rel="noopener noreferrer">Jose</a>
+         <a href="https://github.com/PaulaSuescun" target="_blank" rel="noopener noreferrer">Paula</a>
+         <a href="https://github.com/AlanBarani" target="_blank" rel="noopener noreferrer">Alan Barani</a>
+         <a href="#" target="_blank" rel="noopener noreferrer">mauro</a>
+         <a href="#" target="_blank" rel="noopener noreferrer">Ema</a>
+         
+      </div>
+      
+      <div class="box">
+      
+  
+      <img src="lecode footer.png" alt="">
+      
+      
+      </div>
+      
+       <div class="box">
+         <h3>linkedin</h3>
+         <a href="https://www.linkedin.com/in/alan-jes%C3%BAs-barani-9a021a227" target="_blank" rel="noopener noreferrer">Alan Barani</a>
+         <a href="#">instagram</a>
+         <a href="#">twitter</a>
+         <a href="#">linkedin</a>
+      </div>
+       
+   </div>
+   
+   <h1 class="credit">creado por <span>Le Code</span></h1>
+
+</section>
+
+
+<!-- footer section ends -->
+
+
+
+
+<!-- termina seccion header -->
+
+<!-- custom js file link -->
+<script src="../js/scriptadministradores.js"></script>	
+
 
 </body>
 </html>

@@ -67,6 +67,7 @@ header{
 	background: #333;
 	z-index: 1000;
 	display: flex;
+	
 	align-items: center;
 	justify-content: space-between;
 	padding: 2rem 9%;
@@ -77,6 +78,7 @@ header .logo{
 	font-weight: bolder;
 	color:#fff;
 	text-transform: uppercase;
+
 }
 
 header .logo span{
@@ -85,12 +87,22 @@ header .logo span{
 
 header .navbar a{
 	color:#fff;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	margin:0 .8rem;
 }
 
 header .navbar a:hover{
 	color:var(--orange);
+}
+
+.home{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
+	position: relative;
+	z-index: 0;
 }
 
 #menu-bar{
@@ -102,6 +114,69 @@ header .navbar a:hover{
 	cursor: pointer;
 	display: none;
 }
+
+.footer{
+	background:#333;
+	
+}
+
+.footer .box-container{
+	display: flex;
+	flex-wrap: wrap;gap:1.5rem;
+	text-align:center;
+}
+
+.footer .box-container .box{
+	padding:1rem 0;
+	flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3{
+	font-size: 2.5rem;
+	padding:.7rem 0;
+	color:#fff;
+}
+
+.footer .box-container .box p{
+	font-size: 1.5rem;
+	padding:.7rem 0;
+	color:#eee;
+}
+
+.footer .box-container .box a{
+	display: block;
+	font-size: 1.5rem;
+	padding:.7rem 0;
+	color:#eee;
+}
+
+.footer .box-container .box a:hover{
+	color:var(--orange);
+	text-decoration:underline;
+}
+
+.footer .credit{
+	text-align: center;
+	padding:2rem 1rem;
+	margin-top: 1rem;
+	font-size: 2rem;
+	font-weight: normal;
+	color:#fff;
+	border-top: .1rem solid rgba(255,255,255,.2);
+}
+
+.footer .credit span{
+	color:var(--orange);
+}
+
+
+
+
+
+
+
+
+
 
 /*media queries */
 @media (max-width: 1200px){

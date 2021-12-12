@@ -14,7 +14,9 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	
 	<!-- link hoja de estilo css -->
-	<link rel="stylesheet" href="css/index.css">
+	<style>
+     <%@ include file="../css/index.css"%>
+</style>
 	
 </head>
 <body>
@@ -44,7 +46,7 @@
    
      <i class="fas fa-times" id="form-close"></i>
 
-   <form action="login" method="post">
+   <form action="//localhost:8080/AppWebTierraMedia/login" method="post">
    <h3>login</h3>
    <input type="email" class="box" placeholder="usuario">
    <input type="password" class="box" placeholder="contraseña">
@@ -52,10 +54,6 @@
   <!-- <input type="submit" value="iniciar sesion" class="btn">-->
    </form>
      
-   <% String flash = (String) request.getAttribute("flash"); %>
-			<% if (flash != null) {%>
-			<%= flash%>
-			<% }%>
 </div>
 
 <!-- seccion home empieza -->
@@ -75,7 +73,7 @@
 
 <!-- seccion slider comienza -->
 
-<section class="review" id="review">
+<section class="gallery" id="gallery">
 
  <h1 class="heading">
    <span>g</span>
@@ -249,32 +247,30 @@
 
 <section class="footer">
    <div class="box-container">
-      <div class="box">
-         <h3>sobre nosotros</h3>
-         <p>lorem ipsum</p>
+      
+      
+       <div class="box">
+         <h3>hipervinculos github</h3>
+         <a href="https://github.com/ErCanaro" target="_blank" rel="noopener noreferrer">Enzo</a>
+         <a href="https://github.com/JosCorSgo" target="_blank" rel="noopener noreferrer">Jose</a>
+         <a href="https://github.com/PaulaSuescun" target="_blank" rel="noopener noreferrer">Paula</a>
+         <a href="https://github.com/AlanBarani" target="_blank" rel="noopener noreferrer">Alan Barani</a>
+         <a href="#" target="_blank" rel="noopener noreferrer">mauro</a>
+         <a href="#" target="_blank" rel="noopener noreferrer">Ema</a>
+         
       </div>
       
       <div class="box">
-         <h3>ubicacion de la sucursal</h3>
-         <a href="#">india</a>
-         <a href="#">argentina</a>
-         <a href="#">japon</a>
-         <a href="#">USA</a>
+      
+  
+      <img src="img/lecode footer.png" alt="">
+      
+      
       </div>
       
        <div class="box">
-         <h3>hipervinculos</h3>
-         <a href="#">github Enzo</a>
-         <a href="#">github Jose</a>
-         <a href="#">github Paula</a>
-         <a href="#">github Mauro</a>
-         <a href="#">github Ema</a>
-         <a href="#">github Alan</a>
-      </div>
-      
-       <div class="box">
-         <h3>siguenos</h3>
-         <a href="#">facebook</a>
+         <h3>linkedin</h3>
+         <a href="https://www.linkedin.com/in/alan-jes%C3%BAs-barani-9a021a227" target="_blank" rel="noopener noreferrer">Alan Barani</a>
          <a href="#">instagram</a>
          <a href="#">twitter</a>
          <a href="#">linkedin</a>
@@ -282,7 +278,7 @@
        
    </div>
    
-   <h1 class="credit">creado por <span>Le Code</span> todos los derechos reservados</h1>
+   <h1 class="credit">creado por <span>Le Code</span></h1>
 
 </section>
 
