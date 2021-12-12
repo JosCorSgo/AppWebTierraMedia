@@ -35,8 +35,8 @@
     <nav class="navbar">   
     <a class="nav-link" href="atracciones.jsp">Atracciones</a>  
      <a class="nav-link" href="promociones.jsp">Promociones</a>  
-     <a class="nav-link" href="../comprar.do">Comprar</a>  
-     <a class="nav-link " aria-current="page" href="../itinerario.do">Ver mi itinerario</a>
+     <a class="nav-link" href="../comprar.do?id=${usr.idUsuario}">Comprar</a>  
+     <a class="nav-link " aria-current="page" href="../itinerario.do?id=${usr.idUsuario}">Ver mi itinerario</a>
 
 </nav>
 
@@ -80,7 +80,7 @@
 </div>
 
 
-	<h4>${usr}</h4>	
+
 
 
 <!-- custom js file link -->

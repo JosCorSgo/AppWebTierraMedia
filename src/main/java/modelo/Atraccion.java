@@ -6,6 +6,7 @@ public class Atraccion extends Producto {
 	private boolean estaActiva;
 	private String img;
 	private String descripcion;
+	private String imagenUrl;
 
 	public Atraccion(String nombre, TipoAtraccion tipo, int costo, double duracion, int cupo) {
 		super(nombre, tipo, costo, duracion);
@@ -22,7 +23,7 @@ public class Atraccion extends Producto {
 
 	public Atraccion(long idAtraccion, String nombre, TipoAtraccion tipo, int costo, double duracion, int cupo,
 			boolean estaActiva, String img, String descripcion) {
-		
+
 		super(nombre, tipo, costo, duracion);
 		this.cupo = cupo;
 		this.idAtraccion = idAtraccion;
@@ -59,9 +60,6 @@ public class Atraccion extends Producto {
 		return this.idAtraccion;
 	}
 
-	protected boolean estaActiva() {
-		return this.estaActiva;
-	}
 
 	protected void setEstaActiva(boolean estaActiva) {
 		this.estaActiva = estaActiva;
@@ -79,12 +77,24 @@ public class Atraccion extends Producto {
 		return descripcion;
 	}
 
-	protected void setDescripcion(String descripcion) {
+	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 
 	protected void setIdAtraccion(long idAtraccion) {
 		this.idAtraccion = idAtraccion;
+	}
+
+	public String getImagenUrl() {
+		return this.imagenUrl;
+	}
+
+	public void setImagenUrl(String imagenUrl) {
+		this.imagenUrl = imagenUrl;
+	}
+
+	public boolean estaActiva() {
+		return this.estaActiva;
 	}
 
 }
