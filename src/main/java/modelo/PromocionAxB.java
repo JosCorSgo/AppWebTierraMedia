@@ -15,7 +15,7 @@ public class PromocionAxB extends Producto {
 		this.atraccionesIncluidas.add(a3);
 	}
 
-
+    // se usa en toProducto en Promocion DAOImpl
 	public PromocionAxB(long idPromocion, String nombre, TipoAtraccion tipoAtraccion, ArrayList<Atraccion> atraccionesIncluidas , int costo, double duracion) {
 		super(idPromocion, nombre, tipoAtraccion, costo, duracion);
 		//super.setCosto(atraccionesIncluidas.get(0).getCosto() + atraccionesIncluidas.get(1).getCosto());
@@ -23,15 +23,17 @@ public class PromocionAxB extends Producto {
 		super.setPromo(true);
 		this.atraccionesIncluidas= atraccionesIncluidas;
 		this.idPromocion = idPromocion;
+		
 	}
+
+
 
 	@Override
 	public String toString() {
-		return "-->[Promocion: " + super.getTipo() + "]" + "'" + super.getNombre() + "', Costo: " + super.getCosto()
-				+ " Duracion: " + super.getDuracion() + ".\n" + "    -Atracciones Incluidas: ["
-				+ atraccionesIncluidas.get(0).getNombre() + ", " + atraccionesIncluidas.get(1).getNombre() + ", "
-				+ atraccionesIncluidas.get(2).getNombre() + "]";
+		return "PromocionAxB [idPromocion=" + idPromocion + ", esPromo=" + esPromo + ", atraccionesIncluidas="
+				+ atraccionesIncluidas + "]";
 	}
+
 
 	@Override
 	public void mostrarPorPantalla() {

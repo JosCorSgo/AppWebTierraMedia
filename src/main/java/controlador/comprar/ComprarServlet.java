@@ -31,8 +31,8 @@ public class ComprarServlet extends HttpServlet implements Servlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Integer id = Integer.parseInt(req.getParameter("id"));
-		Usuario usuario = usuarioService.buscarID((long)id);    	
+		Long id = Long.parseLong(req.getParameter("id"));
+		Usuario usuario = usuarioService.buscarID(id);    	
 		ArrayList<Producto> listaProductos =  productoService.listarOrdenados(usuario);
 		
 		req.removeAttribute("usuario");

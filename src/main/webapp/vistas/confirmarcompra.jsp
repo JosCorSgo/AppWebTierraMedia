@@ -16,23 +16,58 @@
 	<div class="container ">
 		<div class="row">
 			<div class="carousel-item active">
-				<img src="../img/bosque-slider-ofertador.jpg" class="d-block w-100"
-					alt="bosque">
+				<img src="https://drive.google.com/uc?export=download&id=${producto.img}" alt="${producto.nombre}">
 				<div class="carousel-caption d-none d-md-block">
-					<h1>nombre del producto</h1>
-					<p><h5>Descripcion corta del producto en el carrusel</h5><p>
-					<p><h3><span>$</span><span>100</span> monedas y <span>1</span> horas</h3><p>	
-					<a href="../comprar.do" class="btn btn-primary">Confirmar
-						ahora</a>
-									<div>
-				<img src="../img/cincoestrellas.png" width="150rem" height="30rem"
-					alt="5 estrellas">
-			</div>
+					<h1>${producto.nombre}</h1>
+					<div>
+						<img src="img/cincoestrellas.png" width="150rem" height="30rem"
+							alt="5 estrellas">
+					</div>
 				</div>
 			</div>
-		</div>
+		</div><!-- ------------------------------------------------------------------------------- -->
 
-		<div class="row">
+		<div class="row"> <!-- ----------------------------------------------------------------- -->
+			<table class="table table-stripped table-hover">
+				<thead>
+					<tr>
+						<th>Producto</th>
+						<th>esPromo</th>
+						<th>Descripcion</th>
+						<th>Costo</th>
+						<th>Duracion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>${producto.nombre}</td>
+						<td> </td>
+						<td>${producto.descripcion}</td>
+						<td>${producto.costo}</td>
+						<td>${producto.duracion}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div> <!-- --------------------------------------------------------------------------- -->
+		
+		<div class="row"><!-- --------------------------------------------------------------------------- -->
+			<div class="col-2">
+				<form action="registrarcompra.do" method="post">
+					<input type="hidden" name="idusuario" value="${usuario.idUsuario}">
+					<input type="hidden" name="idproducto" value="${producto.idProducto}">
+					<button type="submit" class="btn btn-primary">Confirmar
+						compra</button>
+				</form>
+			</div>
+			<div class="col-2">
+				<a onclick="window.history.back();" class="btn btn-secondary"
+					role="button">Cancelar</a>
+			</div>
+		</div><!-- --------------------------------------------------------------------------- -->
+
+
+		<div class="row"> <!-- ---------------------------------------------------------------- -->
 			<h5>Descripcion</h5>
 			<p>Lorem Ipsum is simply dummy text of the printing and
 				typesetting industry. Lorem Ipsum has been the industry's standard
@@ -43,11 +78,8 @@
 				the 1960s with the release of Letraset sheets containing Lorem Ipsum
 				passages, and more recently with desktop publishing software like
 				Aldus PageMaker including versions of Lorem Ipsum.</p>
-			<div class="col-2"><a onclick="window.history.back();" class="btn btn-secondary"
-				role="button">Cancelar</a>
-			</div>
 		</div>
-
+		
 
 	</div>
 </body>
