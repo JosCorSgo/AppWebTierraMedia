@@ -103,11 +103,12 @@ header .navbar a:hover{
 	flex-flow: column;
 	position: relative;
 	z-index: 0;
-	background:url(img/map.jpg);
+	background-image: url(../img/sauron.webp);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center;
     background-size:cover;
+    margin-top:35px;
 }
 
 #menu-bar{

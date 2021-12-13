@@ -110,25 +110,25 @@
       
       <div class="box">
          <i class="fas fa-hiking"></i>
-         <h3>atracciones</h3>
+         <h3><a href="../atracciones/cliente.do">atracciones</a></h3>
          <p>lore ipsum</p>
       </div>
       
       <div class="box">
          <i class="fas fa-percentage"></i>
-         <h3>promociones</h3>
+         <h3><a href="#">promociones</a></h3>
          <p>lore ipsum</p>
       </div>
       
       <div class="box">
          <i class="fas fa-shopping-cart"></i>
-         <h3>comprar</h3>
+         <h3><a href="../comprar.do?id=${usr.idUsuario}">comprar</a></h3>
          <p>lore ipsum</p>
       </div>
       
       <div class="box">
          <i class="fas fa-globe-asia"></i>
-         <h3>ver itinerario</h3>
+         <h3><a href="../itinerario.do">itinerario</a></h3>
          <p>lore ipsum</p>
       </div>
    </div>
@@ -158,7 +158,7 @@
       <div class="box">
       
   
-      <img src="../img/lecode footer.png" alt="">
+      <img src="../img/lecodefooter.png" />
       
       
       </div>

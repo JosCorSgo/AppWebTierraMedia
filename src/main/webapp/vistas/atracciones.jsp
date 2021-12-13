@@ -33,10 +33,12 @@
 <header>
     <div id="menu-bar" class="fas fa-bars"></div>
 
-    <a href="#" class="logo"><span>A</span>tracciones</a>
+    <a href="#" class="logo"><span>P</span>anel de Clientes</a>
     
-<nav class="navbar">   
-    <a class="nav-link" href="atracciones.jsp">Atracciones</a>  
+
+    <nav class="navbar">   
+    <a class="nav-link" href="../atracciones/cliente.do">Atracciones</a>  
+
      <a class="nav-link" href="promociones.jsp">Promociones</a>  
      <a class="nav-link" href="../comprar.do?id=${usr.idUsuario}">Comprar</a>  
      <a class="nav-link " aria-current="page" href="../itinerario.do?id=${usr.idUsuario}">Ver mi itinerario</a>

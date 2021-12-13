@@ -111,8 +111,8 @@
       <div class="box">
       
   
-      <img src="<c:url value='img/lecodefooter.png'/>" alt=.../>
       
+      <img src="<c:url value='img/lecodefooter.png'/>" alt=.../>
       
       </div>
       

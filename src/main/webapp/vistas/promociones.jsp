@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,15 +12,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <!-- custom ccs file link -->
-<style>
-     <%@ include file="../css/promociones.css"%>
+	<style>
+     <%@ include file="../../css/promociones.css"%>
 </style>
+
+
 
 
 
 </head>
 <body>
-
 
 <!-- comienza seccion header -->
 
@@ -28,8 +30,10 @@
 
     <a href="#" class="logo"><span>P</span>romociones</a>
     
-<nav class="navbar">   
-    <a class="nav-link" href="atracciones.jsp">Atracciones</a>  
+
+    <nav class="navbar">   
+    <a class="nav-link" href="../atracciones/cliente.do">Atracciones</a>  
+
      <a class="nav-link" href="promociones.jsp">Promociones</a>  
      <a class="nav-link" href="../comprar.do?id=${usr.idUsuario}">Comprar</a>  
      <a class="nav-link " aria-current="page" href="../itinerario.do?id=${usr.idUsuario}">Ver mi itinerario</a>
@@ -43,6 +47,7 @@
 </header>
 
 <!-- termina seccion header -->
+
 
 <!-- login form container -->
 
@@ -83,6 +88,8 @@
 </section>
 <!-- seccion home termina -->
 
+<!-- footer section starts -->
+
 <section class="footer">
    <div class="box-container">
       
@@ -101,7 +108,7 @@
       <div class="box">
       
   
-      <img src="../img/lecode footer.png" alt="">
+      <img src="<c:url value='../img/lecodefooter.png'/>" alt=.../>
       
       
       </div>
@@ -122,13 +129,13 @@
 
 
 <!-- footer section ends -->
-
+	
+	
 
 	
 
-
 <!-- custom js file link -->
-<script src="../js/scriptatracciones.js"></script>
+<script src="../js/scriptpromociones.js"></script>
 
 
 

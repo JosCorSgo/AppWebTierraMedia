@@ -66,7 +66,7 @@
       <div class="box">
       
   
-      <img src="../img/lecode footer.png" alt="">
+      <img src="../img/lecodefooter.png" />
       
       
       </div>
