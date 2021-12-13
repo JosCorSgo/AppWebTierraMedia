@@ -24,7 +24,7 @@
     <nav class="navbar">  
      <a class="nav-link " href="../listarusuarios.do">Usuarios</a>
      <a class="nav-link" href="../atracciones/index.do">Atracciones</a>
-     <a class="nav-link" href="promociones.jsp">Promociones</a>
+     <a class="nav-link" href="../promociones.do">Promociones</a>
      <a class="nav-link" href="../listarTipos.do">Tipos de Atracciones</a>
 
 </nav>

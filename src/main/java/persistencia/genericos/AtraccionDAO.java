@@ -1,5 +1,7 @@
 package persistencia.genericos;
 
+import java.util.ArrayList;
+
 import modelo.Atraccion;
 
 public interface AtraccionDAO extends GenericDAO<Atraccion> {
@@ -11,5 +13,7 @@ public interface AtraccionDAO extends GenericDAO<Atraccion> {
 	public abstract int borrarLogico(Atraccion atraccion);
 
 	public abstract int activar(Atraccion atraccion);
+
+	public abstract ArrayList<String> listarTipos();
 
 }
