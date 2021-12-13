@@ -261,6 +261,8 @@ public class Usuario {
 		return errors.isEmpty();
 	}
 	
+	
+	
 		
 	public Map<String, String> getErrors() {
 		return this.errors;

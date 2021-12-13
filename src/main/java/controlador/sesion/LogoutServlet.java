@@ -15,9 +15,7 @@ public class LogoutServlet extends HttpServlet {
 
 	@Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	// TODO Auto-generated method stub
- 
-		//req.getSession().invalidate();
+
 		req.getSession().removeAttribute("nombreUsuario");
 		req.getSession().removeAttribute("idUsuario");
 		req.getSession().removeAttribute("usr");

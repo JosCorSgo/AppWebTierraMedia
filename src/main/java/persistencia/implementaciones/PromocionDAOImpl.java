@@ -24,7 +24,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 	@Override
 	public ArrayList<Producto> buscarTodos() {
 		try {
-			String sql = "Select * from Promociones";
+			String sql = "select * from Promociones";
 			Connection conn = ProveedorDeConeccion.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -35,6 +35,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 			}
 			statement.close();
 			return producto;
+
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
