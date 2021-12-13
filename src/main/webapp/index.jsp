@@ -106,12 +106,11 @@
             <div class="box">
               <img src="img/bosque.jpg" alt="">
               <h3>bosque negro</h3>
-              <p>lorem ipsum</p>
               <div class="stars">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
               <i class="far fa-star"></i>
               </div>
             </div>
@@ -123,7 +122,6 @@
             <div class="box">
               <img src="img/erebor.jpg" alt="">
               <h3>erebor</h3>
-              <p>lorem ipsum</p>
               <div class="stars">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -140,13 +138,13 @@
             <div class="box">
               <img src="img/helm.jpg" alt="">
               <h3>helm</h3>
-              <p>lorem ipsum</p>
+   
               <div class="stars">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
+              <i class="fas fa-star"></i>
               </div>
             </div>
          
@@ -155,15 +153,14 @@
           <div class="swiper-slide">
          
             <div class="box">
-              <img src="img/la comarca.jpg" alt="">
+              <img src="img/shrine.jpg" alt="">
               <h3>la comarca</h3>
-              <p>lorem ipsum</p>
               <div class="stars">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
+              <i class="fas fa-star"></i>
               </div>
             </div>
          
@@ -174,7 +171,7 @@
             <div class="box">
               <img src="img/Loth.jpg" alt="">
               <h3>lothlorien</h3>
-              <p>lorem ipsum</p>
+
               <div class="stars">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -191,13 +188,12 @@
             <div class="box">
               <img src="img/mordor.jpeg" alt="">
               <h3>mordor</h3>
-              <p>lorem ipsum</p>
               <div class="stars">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
+              <i class="fas fa-star"></i>
               </div>
             </div>
          
@@ -209,7 +205,7 @@
             <div class="box">
               <img src="img/moria.jpg" alt="">
               <h3>moria</h3>
-              <p>lorem ipsum</p>
+
               <div class="stars">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -226,12 +222,11 @@
             <div class="box">
               <img src="img/tirith.jpg" alt="">
               <h3>minas tirith</h3>
-              <p>lorem ipsum</p>
               <div class="stars">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
               <i class="far fa-star"></i>
               </div>
             </div>
@@ -259,18 +254,16 @@
 <section class="footer">
    <div class="box-container">
       
-      
        <div class="box">
-         <h3>hipervinculos github</h3>
-         <a href="https://github.com/ErCanaro" target="_blank" rel="noopener noreferrer">Enzo</a>
-         <a href="https://github.com/JosCorSgo" target="_blank" rel="noopener noreferrer">Jose</a>
-         <a href="https://github.com/PaulaSuescun" target="_blank" rel="noopener noreferrer">Paula</a>
+         <h3>github</h3>
+         <a href="https://github.com/ErCanaro" target="_blank" rel="noopener noreferrer">Enzo Bulacio</a>
+         <a href="https://github.com/JosCorSgo" target="_blank" rel="noopener noreferrer">Jose Cordoba</a>
+         <a href="https://github.com/PaulaSuescun" target="_blank" rel="noopener noreferrer">Paula Suescun</a>
          <a href="https://github.com/AlanBarani" target="_blank" rel="noopener noreferrer">Alan Barani</a>
-         <a href="#" target="_blank" rel="noopener noreferrer">mauro</a>
-         <a href="#" target="_blank" rel="noopener noreferrer">Ema</a>
+         <a href="https://github.com/Mauricio12Sanchez" target="_blank" rel="noopener noreferrer">Mauro Sanchez</a>
+         <a href="https://github.com/AvalosEmanuel" target="_blank" rel="noopener noreferrer">Ema Avalos</a>
          
-      </div>
-      
+      </div>    
       <div class="box">
       
   
@@ -282,10 +275,13 @@
        <div class="box">
          <h3>linkedin</h3>
          <a href="https://www.linkedin.com/in/alan-jes%C3%BAs-barani-9a021a227" target="_blank" rel="noopener noreferrer">Alan Barani</a>
-         <a href="#">instagram</a>
-         <a href="#">twitter</a>
-         <a href="#">linkedin</a>
+         <a href="https://www.linkedin.com/in/alan-jes%C3%BAs-barani-9a021a227" target="_blank" rel="noopener noreferrer">Ema Avalos</a>
+         <a href="#">Paula Suescun</a>
+         <a href="#">Enzo Bulacio</a>
+         <a href="#">Jose Cordoba</a>
+         <a href="#">Mauro Sanchez</a>
       </div>
+       
        
    </div>
    

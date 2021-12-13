@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>itinerario</title>
+<title>Principal</title>
 
 <!-- font awesome cdn link -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -20,6 +21,11 @@
 </head>
 <body>
 
+<% String usuario = "Invitado"; %>
+<% if (session.getAttribute("nombreUsuario") != null) {%>
+<%     usuario = (String)session.getAttribute("nombreUsuario");} %>
+<% pageContext.setAttribute("usuario", usuario);%>
+<% pageContext.setAttribute("usr", session.getAttribute("usr"));%>
 
 <!-- comienza seccion header -->
 
@@ -28,9 +34,10 @@
 
     <a href="#" class="logo"><span>I</span>tinerario</a>
     
-<nav class="navbar">   
-    <a class="nav-link" href="atracciones.jsp">Atracciones</a>  
-     <a class="nav-link" href="promociones.jsp">Promociones</a>  
+
+    <nav class="navbar">   
+    <a class="nav-link" href="../atracciones/cliente.do">Itinerario</a>  
+
      <a class="nav-link" href="../comprar.do?id=${usr.idUsuario}">Comprar</a>  
      <a class="nav-link " aria-current="page" href="../itinerario.do?id=${usr.idUsuario}">Ver mi itinerario</a>
 
@@ -43,6 +50,14 @@
 </header>
 
 <!-- termina seccion header -->
+
+
+
+<!-- seccion home empieza -->
+<section class="home" id="home">
+
+</section>
+<!-- seccion home termina -->
 
 <!-- login form container -->
 
@@ -75,33 +90,29 @@
 
 </div>
 
+	
 
-<!-- seccion home empieza -->
-<section class="home" id="home">
-
-
-</section>
-<!-- seccion home termina -->
+<!-- footer section starts -->
 
 <section class="footer">
    <div class="box-container">
       
       
        <div class="box">
-         <h3>hipervinculos github</h3>
-         <a href="https://github.com/ErCanaro" target="_blank" rel="noopener noreferrer">Enzo</a>
-         <a href="https://github.com/JosCorSgo" target="_blank" rel="noopener noreferrer">Jose</a>
-         <a href="https://github.com/PaulaSuescun" target="_blank" rel="noopener noreferrer">Paula</a>
+         <h3>github</h3>
+         <a href="https://github.com/ErCanaro" target="_blank" rel="noopener noreferrer">Enzo Bulacio</a>
+         <a href="https://github.com/JosCorSgo" target="_blank" rel="noopener noreferrer">Jose Cordoba</a>
+         <a href="https://github.com/PaulaSuescun" target="_blank" rel="noopener noreferrer">Paula Suescun</a>
          <a href="https://github.com/AlanBarani" target="_blank" rel="noopener noreferrer">Alan Barani</a>
-         <a href="#" target="_blank" rel="noopener noreferrer">mauro</a>
-         <a href="#" target="_blank" rel="noopener noreferrer">Ema</a>
+         <a href="https://github.com/Mauricio12Sanchez" target="_blank" rel="noopener noreferrer">Mauro Sanchez</a>
+         <a href="https://github.com/AvalosEmanuel" target="_blank" rel="noopener noreferrer">Ema Avalos</a>
          
       </div>
       
       <div class="box">
       
   
-      <img src="../img/lecode footer.png" alt="">
+      <img src="img/lecodefooter.png" />
       
       
       </div>
@@ -109,9 +120,11 @@
        <div class="box">
          <h3>linkedin</h3>
          <a href="https://www.linkedin.com/in/alan-jes%C3%BAs-barani-9a021a227" target="_blank" rel="noopener noreferrer">Alan Barani</a>
-         <a href="#">instagram</a>
-         <a href="#">twitter</a>
-         <a href="#">linkedin</a>
+         <a href="https://www.linkedin.com/in/alan-jes%C3%BAs-barani-9a021a227" target="_blank" rel="noopener noreferrer">Ema Avalos</a>
+         <a href="#">Paula Suescun</a>
+         <a href="#">Enzo Bulacio</a>
+         <a href="#">Jose Cordoba</a>
+         <a href="#">Mauro Sanchez</a>
       </div>
        
    </div>
@@ -127,12 +140,9 @@
 	
 
 
+
 <!-- custom js file link -->
-<script src="../js/scriptatracciones.js"></script>
-
-
-
-		
+<script src="js/scriptitinerario.js"></script>
 
 </body>
 </html>

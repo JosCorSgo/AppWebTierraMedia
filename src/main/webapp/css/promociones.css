@@ -27,27 +27,6 @@ html{
 	scroll-behavior: smooth;
 }
 
-section{
-	padding: 2rem 9%;
-}
-
-.heading{
-	text-align: center;
-	padding:2.5rem 0
-}
-
-.heading span{
-	font-size: 3.5rem;
-	background: rgba(255,165,0,.2);
-	color:var(--orange);
-	border-radius: .5rem;
-	padding: .2rem 1rem;
-}
-
-.heading span.space{
-	background:none;
-}
-
 .btn{
 	display: inline-block;
 	margin-top: 1rem;
@@ -64,12 +43,51 @@ section{
 	color:var(--orange);
 }
 
+
+.btn-a{
+	border-radius: 1rem;
+	display: inline-block;
+	margin-top: .5rem;
+	background: #FF0000;
+	color:#fff;
+	padding:.8rem 1.5rem;
+	border:.2rem solid #FF0000;
+	cursor: pointer;
+	font-size:1.7rem;
+}
+
+.btn-a:hover{
+	background:#ffe6e6;
+	color:var(--orange);
+}
+
+.btn-e{
+	border-radius: 1rem;
+	display: inline-block;
+	margin-top: .5rem;
+	background: #dcdcdc;
+	color:#000;
+	padding:.8rem 1.5rem;
+	border:.2rem solid #dcdcdc;
+	cursor: pointer;
+	font-size:1.7rem;
+}
+
+.btn-e:hover{
+	background:#fff;
+	color:var(--orange);
+}
+
+
+
+
 header{
 	position: fixed;
 	top:0; left: 0; right: 0;
 	background: #333;
 	z-index: 1000;
 	display: flex;
+	
 	align-items: center;
 	justify-content: space-between;
 	padding: 2rem 9%;
@@ -80,6 +98,7 @@ header .logo{
 	font-weight: bolder;
 	color:#fff;
 	text-transform: uppercase;
+
 }
 
 header .logo span{
@@ -88,25 +107,13 @@ header .logo span{
 
 header .navbar a{
 	color:#fff;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	margin:0 .8rem;
 }
 
 header .navbar a:hover{
 	color:var(--orange);
 }
-
-header .icons i{
-	font-size: 2.5rem;
-	color:#fff;
-	cursor: pointer;
-	margin-right: 2rem;
-}
-
-header .icons i:hover{
-	color:var(--orange);
-}
-
 
 .home{
 	min-height: 100vh;
@@ -116,60 +123,22 @@ header .icons i:hover{
 	flex-flow: column;
 	position: relative;
 	z-index: 0;
+	background: url(img/map.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size:cover;
 }
 
-.login-form-container{
-	position: fixed;
-	top:-120%; left: 0;
-	z-index: 10000;
-	min-height: 100vh;
-	width:100%;
-	background: rgba(0,0,0,.7);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.login-form-container.active{
-	top:0;
-}
-
-.login-form-container form{
-	margin:2rem;
-	padding:1.5rem 2rem;
-	border-radius: .5rem;
-	background:#fff;
-	width:30rem;
-}
-
-.login-form-container form h3{
-	font-size: 3rem;
-	color: #444;
-	text-transform: uppercase;
-	text-align: center;
-	padding: 1rem 0;	
-}
-
-.login-form-container form p{
-	font-size: 1.5rem;
-	color: #444;
-	/*text-transform: uppercase;*/
-	text-align: center;
-	padding: .5rem 0;	
-}
-
-.login-form-container form .btn{
-	display: block;
-	width: 100%;
+.home .content{
 	text-align: center;
 }
 
-.login-form-container #form-close{
-	position: absolute;
-	top:2rem; right:3rem;
-	font-size: 5rem;
+.home .content h3{
+	font-size: 2.5rem;
 	color:#fff;
-	cursor: pointer;
+	text-transform: uppercase;
+	text-shadow: 0 .3rem .5rem rgba(0,0,0,.1);
 }
 
 #menu-bar{
@@ -181,6 +150,72 @@ header .icons i:hover{
 	cursor: pointer;
 	display: none;
 }
+
+
+
+.content-table{
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 1.5em;
+	min-width:400px;
+	border-radius: 5px 5px 0 0;
+	overflow:hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	 background:url(img/blurry.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size:cover;
+}
+
+.content-table thead tr{
+	background-color: #ffa500;
+	color: #fff;
+	text-align: left;
+	font-weight: bold;
+}
+
+.content-table th,
+.content-table td{
+	padding: 12px 15px;
+}
+
+.content-table tbody tr{
+	border-bottom: 1px solid #ddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+	background-color: rgba(255,223,164, .5)
+}
+
+.content-table tbody tr:last-of-type{
+	border-bottom: 2px solid #ffa500;
+}
+
+.content-table tbody tr.active-row{
+	font-weight:bold;
+	color: #ffa500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -237,17 +272,6 @@ header .icons i:hover{
 .footer .credit span{
 	color:var(--orange);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

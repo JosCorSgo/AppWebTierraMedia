@@ -38,7 +38,6 @@
     <nav class="navbar">   
     <a class="nav-link" href="../atracciones/cliente.do">Atracciones</a>  
 
-     <a class="nav-link" href="promociones.jsp">Promociones</a>  
      <a class="nav-link" href="../comprar.do?id=${usr.idUsuario}">Comprar</a>  
      <a class="nav-link " aria-current="page" href="../itinerario.do?id=${usr.idUsuario}">Ver mi itinerario</a>
 
@@ -113,12 +112,7 @@
          <h3><a href="../atracciones/cliente.do">atracciones</a></h3>
          <p>lore ipsum</p>
       </div>
-      
-      <div class="box">
-         <i class="fas fa-percentage"></i>
-         <h3><a href="#">promociones</a></h3>
-         <p>lore ipsum</p>
-      </div>
+
       
       <div class="box">
          <i class="fas fa-shopping-cart"></i>
@@ -145,13 +139,13 @@
       
       
        <div class="box">
-         <h3>hipervinculos github</h3>
-         <a href="https://github.com/ErCanaro" target="_blank" rel="noopener noreferrer">Enzo</a>
-         <a href="https://github.com/JosCorSgo" target="_blank" rel="noopener noreferrer">Jose</a>
-         <a href="https://github.com/PaulaSuescun" target="_blank" rel="noopener noreferrer">Paula</a>
+         <h3>github</h3>
+         <a href="https://github.com/ErCanaro" target="_blank" rel="noopener noreferrer">Enzo Bulacio</a>
+         <a href="https://github.com/JosCorSgo" target="_blank" rel="noopener noreferrer">Jose Cordoba</a>
+         <a href="https://github.com/PaulaSuescun" target="_blank" rel="noopener noreferrer">Paula Suescun</a>
          <a href="https://github.com/AlanBarani" target="_blank" rel="noopener noreferrer">Alan Barani</a>
-         <a href="#" target="_blank" rel="noopener noreferrer">mauro</a>
-         <a href="#" target="_blank" rel="noopener noreferrer">Ema</a>
+         <a href="https://github.com/Mauricio12Sanchez" target="_blank" rel="noopener noreferrer">Mauro Sanchez</a>
+         <a href="https://github.com/AvalosEmanuel" target="_blank" rel="noopener noreferrer">Ema Avalos</a>
          
       </div>
       
@@ -166,9 +160,11 @@
        <div class="box">
          <h3>linkedin</h3>
          <a href="https://www.linkedin.com/in/alan-jes%C3%BAs-barani-9a021a227" target="_blank" rel="noopener noreferrer">Alan Barani</a>
-         <a href="#">instagram</a>
-         <a href="#">twitter</a>
-         <a href="#">linkedin</a>
+         <a href="https://www.linkedin.com/in/alan-jes%C3%BAs-barani-9a021a227" target="_blank" rel="noopener noreferrer">Ema Avalos</a>
+         <a href="#">Paula Suescun</a>
+         <a href="#">Enzo Bulacio</a>
+         <a href="#">Jose Cordoba</a>
+         <a href="#">Mauro Sanchez</a>
       </div>
        
    </div>
