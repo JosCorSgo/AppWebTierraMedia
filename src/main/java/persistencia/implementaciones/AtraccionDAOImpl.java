@@ -219,5 +219,28 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 			throw new MissingDataException(e);
 		}
 	}
+	
+	//agregado para Promociones
+		@Override
+		public ArrayList<String> listarTipos() {
+			try {
+				String sql = "SELECT Descripcion_tipo_atraccion FROM Tipos_Atraccion;";
+
+				Connection conn = ProveedorDeConeccion.getConnection();
+				PreparedStatement statement = conn.prepareStatement(sql);
+				ResultSet resultados = statement.executeQuery();
+
+				ArrayList<String> tipos = new ArrayList<String>();
+				while (resultados.next()) {
+					tipos.add(resultados.getString(1));
+				}
+				
+				statement.close();
+				
+				return tipos;
+			} catch (Exception e) {
+				throw new MissingDataException(e);
+			}
+		}
 
 }

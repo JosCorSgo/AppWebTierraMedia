@@ -1,5 +1,6 @@
 package servicios;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import modelo.Atraccion;
@@ -63,4 +64,15 @@ public class AtraccionService {
 		atraccionDAO.activar(atraccion);
 	}
 
+	//agregado para promociones
+
+	public ArrayList<Atraccion> listarAtracciones() {
+		ArrayList<Atraccion> listaAtracciones = DAOFactory.getAtraccionDAO().buscarTodos();
+		return listaAtracciones;
+	}
+
+	public ArrayList<String> listarTiposAtraccion() {
+		ArrayList<String> listaTiposAtraccion = DAOFactory.getAtraccionDAO().listarTipos();
+		return listaTiposAtraccion;
+	}
 }
