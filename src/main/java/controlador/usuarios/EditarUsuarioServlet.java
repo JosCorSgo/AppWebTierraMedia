@@ -58,7 +58,7 @@ public class EditarUsuarioServlet extends HttpServlet {
 		String email = req.getParameter("email");
 		String pass = req.getParameter("pass");
 		Integer presupuesto = Integer.parseInt(req.getParameter("presupuesto"));
-		double tiempo = (double) Integer.parseInt(req.getParameter("tiempo"));
+		double tiempo = Double.parseDouble(req.getParameter("tiempo"));
 		TipoAtraccion preferencia = TipoAtraccion.valueOf(req.getParameter("preferencia"));
 		Boolean estaActivo = Boolean.valueOf(req.getParameter("estaActivo"));
 		Boolean esAdmin = Boolean.valueOf(req.getParameter("esAdmin"));

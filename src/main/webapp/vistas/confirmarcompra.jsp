@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,7 @@
 	<div class="container ">
 		<div class="row">
 			<div class="carousel-item active">
-				<img src="https://drive.google.com/uc?export=download&id=${producto.img}" alt="${producto.nombre}">
+				<img src="https://drive.google.com/uc?export=download&id=${producto.imgURL}" alt="${producto.nombre}">
 				<div class="carousel-caption d-none d-md-block">
 					<h1>${producto.nombre}</h1>
 					<div>
@@ -26,13 +27,13 @@
 				</div>
 			</div>
 		</div><!-- ------------------------------------------------------------------------------- -->
-
+		
 		<div class="row"> <!-- ----------------------------------------------------------------- -->
 			<table class="table table-stripped table-hover">
 				<thead>
 					<tr>
 						<th>Producto</th>
-						<th>esPromo</th>
+						<th>Tipo</th>
 						<th>Descripcion</th>
 						<th>Costo</th>
 						<th>Duracion</th>
@@ -40,11 +41,16 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>${producto.nombre}</td>
-						<td> </td>
-						<td>${producto.descripcion}</td>
-						<td>${producto.costo}</td>
-						<td>${producto.duracion}</td>
+						<td><c:out value="${producto.nombre}"></c:out></td>
+						<c:if test="${producto.esPromo() == true }">
+							<td>Promoci&oacute;n</td>
+						</c:if>
+						<c:if test="${producto.esPromo() == false }">
+							<td>Atracci&oacute;n</td>
+						</c:if>
+						<td><c:out value="${producto.descripcion}"></c:out></td>
+						<td><c:out value="${producto.costo}"></c:out></td>
+						<td><c:out value="${producto.duracion}"></c:out></td>
 					</tr>
 				</tbody>
 			</table>
@@ -54,8 +60,9 @@
 		<div class="row"><!-- --------------------------------------------------------------------------- -->
 			<div class="col-2">
 				<form action="registrarcompra.do" method="post">
-					<input type="hidden" name="idusuario" value="${usuario.idUsuario}">
-					<input type="hidden" name="idproducto" value="${producto.idProducto}">
+					<input type="text" name="idusuario" value="${usuario.idUsuario}">
+					<input type="text" name="idproducto" value="${producto.idProducto}">
+					<input type="text" name="esp" value="${producto.esPromo()}">
 					<button type="submit" class="btn btn-primary">Confirmar
 						compra</button>
 				</form>
@@ -68,7 +75,7 @@
 
 
 		<div class="row"> <!-- ---------------------------------------------------------------- -->
-			<h5>Descripcion</h5>
+			<h5>Descripcion Larga</h5>
 			<p>Lorem Ipsum is simply dummy text of the printing and
 				typesetting industry. Lorem Ipsum has been the industry's standard
 				dummy text ever since the 1500s, when an unknown printer took a

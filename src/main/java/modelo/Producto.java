@@ -38,16 +38,27 @@ public abstract class Producto {
 
 	// se usa en el constructor de promomocion que viene de toProducto en
 	// PromocionDAOImpl
-	public Producto(long id, String nombre, TipoAtraccion tipo, double costo, double duracion) {
+	public Producto(long id, String nombre, TipoAtraccion tipo, double costo, double duracion, 
+			String descripcion, String imgURL) {
 		this.nombre = nombre;
 		this.tipo = tipo;
 		this.costo = (int) costo;
 		this.duracion = duracion;
 		this.IdProducto = id;
+		this.descripcion = descripcion;
+		this.imgURL = imgURL;
 
 	}
 
 	// nuevoProducto
+
+	public Producto(long id, String nombre, TipoAtraccion tipo, int costo, double duracion) {
+		this.nombre = nombre;
+		this.tipo = tipo;
+		this.costo = (int) costo;
+		this.duracion = duracion;
+		this.IdProducto = id;
+	}
 
 	public void setTipo(TipoAtraccion tipo) {
 		this.tipo = tipo;
@@ -202,7 +213,7 @@ public abstract class Producto {
 		String cadena = "";
 		if (this.esPromo) {
 			for (Atraccion atraccion : atraccionesIncluidas) {
-				cadena = cadena + atraccion.getNombre() + ". ";
+				cadena = cadena + atraccion.getNombre() + ".   ";
 			}
 			return "Esta promocion incluye: " + cadena;
 		}

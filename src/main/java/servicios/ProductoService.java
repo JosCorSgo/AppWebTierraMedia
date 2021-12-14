@@ -22,8 +22,8 @@ public class ProductoService {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 		atraccionesDB = atraccionDAO.buscarTodos();   
-		//promocionesDB = promocionDAO.buscarTodos(); 
-
+		promocionesDB = promocionDAO.buscarTodos(); 
+		productosDB.clear();
 		productosDB.addAll(atraccionesDB);
 		productosDB.addAll(promocionesDB);
 		generarDescripcionesDeProductos();

@@ -52,6 +52,46 @@
 			</div>
 		</div> <!-- ----  FIN DE LA PRIMERA FILA -------- -->
 		
+		<div class="row"> <!-- ----  HISTORIAL -------- -->
+			<p><h1>Historial de atracciones compradas</h1><p>
+			<table class="table table-stripped table-hover">
+				<thead>
+					<tr>
+						<th>Producto</th>
+						<th>Tipo</th>
+						<th>Descripcion</th>
+						<th>Costo</th>
+						<th>Duracion</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${usuario.getItinerario()}" var="item">
+						<tr>
+							<td><c:out value="${item.nombre}"></c:out></td>
+							<c:if test="${item.esPromo() == true }">
+								<td>Promoci&oacute;n</td>
+							</c:if>
+							<c:if test="${item.esPromo() == false }">
+								<td>Atracci&oacute;n</td>
+							</c:if>
+							<c:if test="${item.esPromo() == true }">
+								<td>Promoci&oacute;n</td>  
+								<td><c:out value="${item.generarDescripcion()}"></c:out></td>
+							</c:if>
+							<c:if test="${item.esPromo() == false }">
+								<td>Atracci&oacute;n</td>
+								<td><c:out value="${item.descripcion}"></c:out></td>
+							</c:if>
+							<td><c:out value="${item.costo}"></c:out></td>
+							<td><c:out value="${item.duracion}"></c:out></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div> <!-- ----  FIN HISTORIAL-------- -->
+		
+		
 		<div class="row"> <!-- ----   SEGUNDA FILA CARRUSEL -------- -->
 		
 			<div id="carouselExampleCaptions" class="carousel slide"
@@ -66,12 +106,12 @@
 					</div>
 					<c:forEach items="${listaProductos}" var="producto">
 						<div class="carousel-item ">
-							<img src="https://drive.google.com/uc?export=download&id=${producto.img}" alt="${producto.nombre}">
+							<img src="https://drive.google.com/uc?export=download&id=${producto.imgURL}" alt="${producto.nombre}" style="object-fit: cover">
 							<div class="carousel-caption d-none d-md-block">
 								<h1>${producto.nombre}</h1>
 								<p><h5>${producto.descripcion}</h5><p>
 								<p><h3><span>${producto.costo}</span> monedas  y <span>${producto.duracion}</span> horas de duracion</h3>
-								<p><a href="confirmarcompra.do?idp=${producto.idAtraccion }&idu=${usuario.idUsuario }"
+								<p><a href="confirmarcompra.do?idp=${producto.idProducto }&idu=${usuario.idUsuario}&esp=${producto.esPromo()}"
 										class="btn btn-primary"> Comprar </a>
 							</div>
 						</div>
@@ -88,15 +128,17 @@
 					<span class="visually-hidden">Next</span>
 				</button>
 			</div>
-		</div> <!-- ----  FIN DE LA SEGUNDA FILA CARRUSEL -------- -->
+		</div>  <!-- ---- FIN DE LA SEGUNDA FILA CARRUSEL -------- -->
 		
 	
 		<div class="row"> <!-- ----   TERCERA  FILA LISTADO-------- -->
+			<p><h5>${listaProductos.size()} productos listados</h5><p>
+			
 			<table class="table table-stripped table-hover">
 				<thead>
 					<tr>
 						<th>Producto</th>
-						<th>esPromo</th>
+						<th>Tipo</th>
 						<th>Descripcion</th>
 						<th>Costo</th>
 						<th>Duracion</th>
@@ -107,11 +149,17 @@
 					<c:forEach items="${listaProductos}" var="producto">
 						<tr>
 							<td><c:out value="${producto.nombre}"></c:out></td>
-							<td><c:out value="{producto.esPromo}"></c:out></td>
-							<td><c:out value="{producto.descripcion}"></c:out></td>
+							<c:if test="${producto.esPromo() == true }">
+								<td>Promoci&oacute;n</td>  
+								<td><c:out value="${producto.generarDescripcion()}"></c:out></td>
+							</c:if>
+							<c:if test="${producto.esPromo() == false }">
+								<td>Atracci&oacute;n</td>
+								<td><c:out value="${producto.descripcion}"></c:out></td>
+							</c:if>
 							<td><c:out value="${producto.costo}"></c:out></td>
 							<td><c:out value="${producto.duracion}"></c:out></td>
-							<td><a href="confirmarcompra.do?idp=${producto.idAtraccion }&idu=${usuario.idUsuario } " 
+							<td><a href="confirmarcompra.do?idp=${producto.idProducto }&idu=${usuario.idUsuario}&esp=${producto.esPromo()} " 
 								class="btn btn-light rounded-0" role="button"><i class="bi bi-pencil-fill">Comprar</i></a></td>
 						</tr>
 					</c:forEach>
@@ -120,7 +168,7 @@
 
 		</div> <!-- ----  FIN DE LA TERCERA FILA LISTADO -------- -->
 
-	</div> <!-- -----------FIN DE CONTAINER PRINCIPA-------- -->
+	</div> <!-- -----------FIN DE CONTAINER PRINCIPAL-------- -->
 
 </body>
 </html>

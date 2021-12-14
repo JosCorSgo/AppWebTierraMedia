@@ -135,8 +135,7 @@ public class Atraccion extends Producto {
     //agregue
 	//toAtraccionDAO       idAtraccion,        nombre,               tipo,     costo,        duracion,     cupo,         estaActivo,        img,        descripcion);
     public Atraccion( long idAtraccion, String nombre, TipoAtraccion tipo, int costo, double duracion, int cupo, boolean estaActiva, String img, String descripcion) {
-        //super(nombre, tipo,costo, duracion);
-        super(idAtraccion, nombre, tipo, costo, duracion);
+    	super(idAtraccion, nombre, tipo, costo, duracion, descripcion, img);
         this.cupo = cupo;
         this.idAtraccion = idAtraccion;
         this.atraccionesIncluidas.add(this);

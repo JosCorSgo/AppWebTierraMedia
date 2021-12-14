@@ -35,10 +35,10 @@ public class RegistrarCompraServlet extends HttpServlet implements Servlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Long idProducto = (long) Integer.parseInt(req.getParameter("idproducto"));
-		Long idUsuario = (long) Integer.parseInt(req.getParameter("idusuario"));
-		Boolean esPromo = false;
-		
+		Long idProducto = Long.parseLong(req.getParameter("idproducto"));
+		Long idUsuario = Long.parseLong(req.getParameter("idusuario"));
+		Boolean esPromo = Boolean.parseBoolean(req.getParameter("esp"));
+
 		Usuario usuario = usuarioService.buscarID(idUsuario);
 		Producto producto = (Producto)productoService.buscarPorID(idProducto,esPromo);
 		

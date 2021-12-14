@@ -33,13 +33,13 @@
 				<div class="mb-3">
 					<label for="presupuesto" class="col-form-label">Presupuesto:</label>
 					<input type="number" class="form-control" id="presupuesto"
-						name="presupuesto" min="1" required value="${usuario.presupuesto}">
+						name="presupuesto" min="1" pattern="\d+" required value="${usuario.presupuesto}">
 				</div>
 
 				<div class="mb-3">
 					<label for="tiempo" class="col-form-label">Tiempo disponible:</label> 
 					<input type="number" class="form-control" id="tiempo"
-						name="tiempo" min="1" required value="${usuario.tiempoDisponible}">
+						name="tiempo" min="1" pattern="\d+" required value="${usuario.tiempoDisponible}">
 				</div>
 
 				<div class="mb-3">

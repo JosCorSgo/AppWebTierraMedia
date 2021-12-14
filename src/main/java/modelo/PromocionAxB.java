@@ -20,7 +20,7 @@ public class PromocionAxB extends Producto {
 		}
 		
 		public PromocionAxB(long idPromocion, String nombre, TipoAtraccion tipoAtraccion, ArrayList<Atraccion> atraccionesIncluidas , int costo, double duracion) {
-			super(idPromocion, nombre, tipoAtraccion, costo, duracion);
+			super(idPromocion, nombre, tipoAtraccion, costo, duracion, "","");
 			//super.setCosto(atraccionesIncluidas.get(0).getCosto() + atraccionesIncluidas.get(1).getCosto());
 			//super.setDuracion(atraccionesIncluidas.get(0).getDuracion() + atraccionesIncluidas.get(1).getDuracion() + atraccionesIncluidas.get(1).getDuracion());
 			super.setPromo(true);
@@ -28,10 +28,10 @@ public class PromocionAxB extends Producto {
 			this.atraccionesIncluidas= atraccionesIncluidas;
 			this.idPromocion = idPromocion;
 		}
-		
+		// se usa en toProducto  PromocionDAOImpl
 		public PromocionAxB(long idPromocion, String nombre, TipoAtraccion tipoAtraccion, ArrayList<Atraccion> atraccionesIncluidas, 
 				int costo, int descuento, double duracion,  String descripcion, String imgURL) {
-			super(idPromocion, nombre, tipoAtraccion, costo, duracion);
+			super(idPromocion, nombre, tipoAtraccion, costo, duracion,  descripcion,  imgURL);
 			//super.setCosto(atraccionesIncluidas.get(0).getCosto() + atraccionesIncluidas.get(1).getCosto());
 			//super.setDuracion(atraccionesIncluidas.get(0).getDuracion() + atraccionesIncluidas.get(1).getDuracion() + atraccionesIncluidas.get(1).getDuracion());
 			super.setPromo(true);

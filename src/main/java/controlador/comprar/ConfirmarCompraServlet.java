@@ -33,10 +33,10 @@ public class ConfirmarCompraServlet extends HttpServlet {
 		Long idProducto = (long) Integer.parseInt(req.getParameter("idp"));
 		Long idUsuario = (long) Integer.parseInt(req.getParameter("idu"));
 		boolean esPromo = Boolean.parseBoolean(req.getParameter("esp"));
-		esPromo = false;
+
 		Usuario usuario = usuarioService.buscarID(idUsuario);
 		Producto producto = productoService.buscarPorID(idProducto,esPromo);
-
+		
 		req.setAttribute("usuario", usuario);
 		req.setAttribute("producto", producto);
 		
@@ -44,19 +44,5 @@ public class ConfirmarCompraServlet extends HttpServlet {
 		dispatcher.forward(req, resp);
 	}
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Long idProducto = (long) Integer.parseInt(req.getParameter("idproducto"));
-		Long idUsuario = (long) Integer.parseInt(req.getParameter("idusuario"));
-		Boolean esPromo = false;
-		
-		Usuario usuario = usuarioService.buscarID(idUsuario);
-		Producto producto = productoService.buscarPorID(idProducto,esPromo);
-		
-
-		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/comprar.do");
-		dispatcher.forward(req, resp);
-	}
 
 }

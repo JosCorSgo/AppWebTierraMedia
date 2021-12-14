@@ -56,7 +56,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		}
 	}
 	
-
+/*
 	@Override
 	public ArrayList<Producto> itinerarioDelUsuarioPorId(Long idUsuario) {
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
@@ -66,14 +66,14 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			String sql = "SELECT * FROM Item_Itinerario WHERE id_usuario = ?";
 			Connection conn = ProveedorDeConeccion.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setLong(1, idUsuario);
+			statement.setLong(2, idUsuario);
 			ResultSet resultados = statement.executeQuery();
 
 			while (resultados.next()) {
-				if (resultados.getString(3) == "atraccion") {
-					productos.add(atraccionDAO.buscarPorIdAtraccion(resultados.getLong(2)));
+				if (resultados.getInt(4) == 1) {
+					productos.add(atraccionDAO.buscarPorIdAtraccion(resultados.getLong(3)));
 				}else {
-					productos.add(promocionDAO.buscarPorIdPromocion(resultados.getLong(2)));
+					productos.add(promocionDAO.buscarPorIdPromocion(resultados.getLong(3)));
 				}
 			}
 			statement.close();
@@ -82,7 +82,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			throw new MissingDataException(e);
 		}
 	}
-	
+	*/
 	
 	
 	public Usuario itinerarioeHistorialDelUsuario(Usuario usuario) {
@@ -101,7 +101,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 				}else if (resultados.getLong(4) == 2) {
 					usuario.getItinerario().add(promocionDAO.buscarPorIdPromocion(resultados.getLong(3)));
 				}
-				usuario.getHistorialDeAtracciones().addAll(usuario.atraccionesDelItinerario());
+					usuario.getHistorialDeAtracciones().addAll(usuario.atraccionesDelItinerario());
 			}
 			statement.close();
 			return usuario;

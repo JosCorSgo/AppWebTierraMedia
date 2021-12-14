@@ -2,6 +2,7 @@ package controlador.comprar;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
@@ -12,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import modelo.Producto;
 import modelo.Usuario;
+import servicios.ItinerarioService;
 import servicios.ProductoService;
 import servicios.UsuarioService;
 
@@ -39,6 +41,7 @@ public class ComprarServlet extends HttpServlet implements Servlet {
     	req.setAttribute("usuario", usuario);
 		req.removeAttribute("listaProductos");
     	req.setAttribute("listaProductos", listaProductos);
+    	
     	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/vistas/comprar.jsp");
 		dispatcher.forward(req, resp);
 
