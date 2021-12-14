@@ -106,8 +106,6 @@ header .icons i{
 header .icons i:hover{
 	color:var(--orange);
 }
-
-
 .home{
 	min-height: 100vh;
 	display: flex;
@@ -116,6 +114,10 @@ header .icons i:hover{
 	flex-flow: column;
 	position: relative;
 	z-index: 0;
+}
+
+.home .content{
+	text-align: center;
 }
 
 .login-form-container{
@@ -181,6 +183,7 @@ header .icons i:hover{
 	cursor: pointer;
 	display: none;
 }
+
 
 
 

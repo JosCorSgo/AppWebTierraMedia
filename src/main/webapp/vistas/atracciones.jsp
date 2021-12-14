@@ -28,62 +28,7 @@
 <body>
 
 
-<!-- comienza seccion header -->
-
-<header>
-    <div id="menu-bar" class="fas fa-bars"></div>
-
-    <a href="#" class="logo"><span>P</span>anel de Clientes</a>
-    
-
-    <nav class="navbar">   
-    <a class="nav-link" href="../atracciones/cliente.do">Atracciones</a>  
-
-     <a class="nav-link" href="promociones.jsp">Promociones</a>  
-     <a class="nav-link" href="../comprar.do?id=${usr.idUsuario}">Comprar</a>  
-     <a class="nav-link " aria-current="page" href="../itinerario.do?id=${usr.idUsuario}">Ver mi itinerario</a>
-
-</nav>
-
-   <div class= "icons">
-      <i class="fas fa-user" id="login-btn"></i>
-   </div>
-
-</header>
-
-<!-- termina seccion header -->
-
-<!-- login form container -->
-
-<div class="login-form-container">
-
-   <i class="fas fa-times" id="form-close"></i>
-
-   <form action="">
-   <h3>Usuario</h3>
-   
-	<c:choose>
-		    <c:when test="${usuario == 'Invitado'}">
-		          ${usuario}
-		          <a class="btn" href="login.jsp">Iniciar sesion</a>
-		          			
-		         </c:when>
-		         <c:otherwise>
-
-		            <p>Nombre: ${usr.nombre}</p>
-		             <p>Preferencia: ${usr.preferencia}</p>
-		          	<p>Presupuesto: ${usr.presupuesto}</p>
-		          	<p>Tiempo: ${usr.tiempoDisponible}</p>
-		          	<a class="btn" href="../logout">Cerrar sesion</a>
-		          </c:otherwise>
-		          		  
-		        </c:choose>
-   
-
-   </form>
-
-</div>
-
+<jsp:include page="/partials/navcliente.jsp"></jsp:include>
 
 <!-- seccion home empieza -->
 <section class="home" id="home">
@@ -97,16 +42,16 @@
       
       
        <div class="box">
-         <h3>hipervinculos github</h3>
-         <a href="https://github.com/ErCanaro" target="_blank" rel="noopener noreferrer">Enzo</a>
-         <a href="https://github.com/JosCorSgo" target="_blank" rel="noopener noreferrer">Jose</a>
-         <a href="https://github.com/PaulaSuescun" target="_blank" rel="noopener noreferrer">Paula</a>
+         <h3>github</h3>
+         <a href="https://github.com/ErCanaro" target="_blank" rel="noopener noreferrer">Enzo Bulacio</a>
+         <a href="https://github.com/JosCorSgo" target="_blank" rel="noopener noreferrer">Jose Cordoba</a>
+         <a href="https://github.com/PaulaSuescun" target="_blank" rel="noopener noreferrer">Paula Suescun</a>
          <a href="https://github.com/AlanBarani" target="_blank" rel="noopener noreferrer">Alan Barani</a>
-         <a href="#" target="_blank" rel="noopener noreferrer">mauro</a>
-         <a href="#" target="_blank" rel="noopener noreferrer">Ema</a>
+         <a href="https://github.com/Mauricio12Sanchez" target="_blank" rel="noopener noreferrer">Mauro Sanchez</a>
+         <a href="https://github.com/AvalosEmanuel" target="_blank" rel="noopener noreferrer">Ema Avalos</a>
          
       </div>
-      
+     
       <div class="box">
       
   
@@ -118,11 +63,13 @@
        <div class="box">
          <h3>linkedin</h3>
          <a href="https://www.linkedin.com/in/alan-jes%C3%BAs-barani-9a021a227" target="_blank" rel="noopener noreferrer">Alan Barani</a>
-         <a href="#">instagram</a>
-         <a href="#">twitter</a>
-         <a href="#">linkedin</a>
+         <a href="https://www.linkedin.com/in/alan-jes%C3%BAs-barani-9a021a227" target="_blank" rel="noopener noreferrer">Ema Avalos</a>
+         <a href="#">Paula Suescun</a>
+         <a href="#">Enzo Bulacio</a>
+         <a href="#">Jose Cordoba</a>
+         <a href="#">Mauro Sanchez</a>
       </div>
-       
+         
    </div>
    
    <h1 class="credit">creado por <span>Le Code</span></h1>

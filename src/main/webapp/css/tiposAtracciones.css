@@ -282,11 +282,11 @@ header .icons i:hover{
 .content-table tbody tr:last-of-type{
 	border-bottom: 2px solid #ffa500;
 }
-
-.content-table tbody tr.active-row{
+.content-table h1{
 	font-weight:bold;
-	color: #ffa500;
+	font-size:2rem;
 }
+
 
 
 

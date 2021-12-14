@@ -1,8 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 
-
-
 :root{
 --orange:#ffa500;
 }
@@ -109,17 +107,6 @@ header .icons i:hover{
 	color:var(--orange);
 }
 
-
-.home{
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-flow: column;
-	position: relative;
-	z-index: 0;
-}
-
 .login-form-container{
 	position: fixed;
 	top:-120%; left: 0;
@@ -141,7 +128,7 @@ header .icons i:hover{
 	padding:1.5rem 2rem;
 	border-radius: .5rem;
 	background:#fff;
-	width:30rem;
+	width:50rem;
 }
 
 .login-form-container form h3{
@@ -152,19 +139,48 @@ header .icons i:hover{
 	padding: 1rem 0;	
 }
 
-.login-form-container form p{
+.login-form-container form .box{
+	width: 100%;
+	padding: 1rem;
+	font-size: 1.7rem;
+	color:#333;
+	margin:.6rem 0;
+	border:.1rem solid rgba(0,0,0,.3);
+	text-transform: none;
+}
+
+.login-form-container form .box:focus{
+	border-color: var(--orange);;
+}
+
+.login-form-container form #remember{
+	margin:2rem 0;
+}
+
+.login-form-container form label{
 	font-size: 1.5rem;
-	color: #444;
-	/*text-transform: uppercase;*/
-	text-align: center;
-	padding: .5rem 0;	
 }
 
 .login-form-container form .btn{
 	display: block;
 	width: 100%;
-	text-align: center;
 }
+
+.login-form-container form p{
+	padding: .5rem 0;
+	font-size: 1.5rem;
+	color:#666;
+}
+
+.login-form-container form p a{
+	color:var(--orange);
+}
+
+.login-form-container form p a:hover{
+	color:#333;
+	text-decoration: underline;
+}
+
 
 .login-form-container #form-close{
 	position: absolute;
@@ -173,6 +189,7 @@ header .icons i:hover{
 	color:#fff;
 	cursor: pointer;
 }
+
 
 #menu-bar{
 	color:#fff;
@@ -183,6 +200,37 @@ header .icons i:hover{
 	cursor: pointer;
 	display: none;
 }
+
+.home{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
+	position: relative;
+	z-index: 0;
+}
+
+.home .content{
+	text-align: center;
+}
+
+.home .content h3{
+	font-size: 4.5rem;
+	color:#fff;
+	text-transform: uppercase;
+	text-shadow: 0 .3rem .5rem rgba(0,0,0,.1);
+}
+
+.home .content p{
+	font-size: 2.5rem;
+	color:#fff;
+	padding: .5rem 0;
+
+}
+
+
+
 
 .services{
 	min-height: 100vh;
@@ -199,6 +247,7 @@ header .icons i:hover{
 
 .services .box-container{
 	display: flex;
+
 	flex-wrap: wrap;
 	gap:1.5rem;
 	
@@ -206,13 +255,15 @@ header .icons i:hover{
 }
 
 .services .box-container .box{
-	flex: 1 1 30rem;
+	/*flex: 1 1 30rem;*/
+	flex: 1 1 15rem;
 	border-radius: .5rem;
 	padding:1rem;
 	text-align: center;
 	cursor: pointer;
 	
 }
+
 
 .services .box-container .box i{
 	padding:1rem;
@@ -234,6 +285,108 @@ header .icons i:hover{
 .services .box-container .box:hover{
 	box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
 }
+
+
+
+
+
+.gallery .review-slider{
+	padding-bottom: 2rem;
+}
+
+.gallery .box{
+	padding:2rem;
+	text-align:center;
+	box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+	border-radius: .5rem;
+}
+
+.gallery .box img{
+	height:20rem;
+	width:100%;
+	/*border-radius:50%; */
+	object-fit: cover;
+	margin-bottom:1rem;
+	
+}
+
+.gallery .box h3{
+	color:#333;
+	font-size: 2.5rem;
+}
+
+.gallery .box p{
+	color:#666;
+	font-size: 1.5rem;
+	padding: 1rem 0;
+}
+
+.gallery .box .stars i{
+	color:var(--orange);
+	font-size: 1.7rem;
+}
+
+
+.content-table{
+	background-color:#fee8bf;
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 1.5em;
+	min-width:400px;
+	border-radius: 5px 5px 0 0;
+	overflow:hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr{
+	background-color: #ffa500;
+	color: #fff;
+	text-align: left;
+	font-weight: bold;
+}
+
+.content-table th,
+.content-table td{
+	padding: 12px 15px;
+}
+
+.content-table tbody tr{
+	border-bottom: 1px solid #ddd;
+}
+
+.content-table tbody p{
+		font-size: 1.5em;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+	/*background-color: #ffdfa4;*/
+	background-color: rgba(255,223,164, .5)
+}
+
+.content-table tbody tr:last-of-type{
+	border-bottom: 2px solid #ffa500;
+}
+
+.content-table tbody tr.active-row{
+	font-weight:bold;
+	color: #ffa500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -297,17 +450,6 @@ header .icons i:hover{
 .footer .credit span{
 	color:var(--orange);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
