@@ -11,7 +11,7 @@
     <nav class="navbar">   
     <a class="nav-link" href="http://localhost:8080/AppWebTierraMedia/atracciones/cliente.do">Atracciones</a>  
      <a class="nav-link" href="http://localhost:8080/AppWebTierraMedia/comprar.do?id=${usr.idUsuario}">Comprar</a>  
-     <a class="nav-link " aria-current="page" href="http://localhost:8080/AppWebTierraMedia/itinerario.do?id=${usr.idUsuario}">Ver mi itinerario</a>
+     <!--   <a class="nav-link " aria-current="page" href="http://localhost:8080/AppWebTierraMedia/itinerario.do?id=${usr.idUsuario}">Ver mi itinerario</a> --> 
 
 </nav>
 

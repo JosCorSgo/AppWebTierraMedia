@@ -56,9 +56,9 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 		}
 	}
 	
-/*
+	// este metodo no se usa
 	@Override
-	public ArrayList<Producto> itinerarioDelUsuarioPorId(Long idUsuario) {
+	public ArrayList<Producto> itinerarioDelUsuarioPorId(Long idUsuario) { 
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 		ArrayList<Producto> productos = new ArrayList<Producto>();
@@ -82,7 +82,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			throw new MissingDataException(e);
 		}
 	}
-	*/
+
 	
 	
 	public Usuario itinerarioeHistorialDelUsuario(Usuario usuario) {

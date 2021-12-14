@@ -60,9 +60,9 @@
 		<div class="row"><!-- --------------------------------------------------------------------------- -->
 			<div class="col-2">
 				<form action="registrarcompra.do" method="post">
-					<input type="text" name="idusuario" value="${usuario.idUsuario}">
-					<input type="text" name="idproducto" value="${producto.idProducto}">
-					<input type="text" name="esp" value="${producto.esPromo()}">
+					<input type="hidden" name="idusuario" value="${usuario.idUsuario}">
+					<input type="hidden" name="idproducto" value="${producto.idProducto}">
+					<input type="hidden" name="esp" value="${producto.esPromo()}">
 					<button type="submit" class="btn btn-primary">Confirmar
 						compra</button>
 				</form>

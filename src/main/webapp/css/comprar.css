@@ -13,6 +13,7 @@
 	outline: none; border:none;
 	text-decoration: none;
 	transition: all .2s linear;
+	
 }
 
 *::selection{
@@ -209,17 +210,20 @@ header .icons i:hover{
 	flex-flow: column;
 	position: relative;
 	z-index: 0;
+	background-color: #fff5e3
 }
 
 .home .content{
 	text-align: center;
+	
 }
 
 .home .content h3{
 	font-size: 4.5rem;
-	color:#fff;
+	color:var(--orange);
 	text-transform: uppercase;
 	text-shadow: 0 .3rem .5rem rgba(0,0,0,.1);
+	
 }
 
 .home .content p{
@@ -289,16 +293,23 @@ header .icons i:hover{
 
 
 
+.gallery{
+	background-color: #fff5e3
+}
 
 .gallery .review-slider{
 	padding-bottom: 2rem;
+	
+	
 }
 
 .gallery .box{
+	background-color:rgb(255,223,164);
 	padding:2rem;
 	text-align:center;
 	box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
 	border-radius: .5rem;
+	
 }
 
 .gallery .box img{
