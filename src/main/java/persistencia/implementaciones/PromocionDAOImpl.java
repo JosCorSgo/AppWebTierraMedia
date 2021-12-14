@@ -74,19 +74,20 @@ public class PromocionDAOImpl implements PromocionDAO {
 		int tipoPromo = resultados.getInt(6);
 		String descripcion = resultados.getString(7);
 		String imgURL = resultados.getString(8);
+		Boolean estaActivo = booleano(resultados.getInt(9));
 
 		ArrayList<Atraccion> atraccionesIncluidas = atraccionesDeLaPromocion(resultados);
 		double duracion = obtenerDuracionDelaPromocion(atraccionesIncluidas);
 		Producto producto = null;
 		if (tipoPromo == 1) {
 			producto = new PromocionAxB(idPromocion, nombre, tipoAtraccion, atraccionesIncluidas, costo, descuento,
-					duracion, descripcion, imgURL);
+					duracion, descripcion, imgURL, estaActivo);
 		} else if (tipoPromo == 2) {
 			producto = new PromoPorcentual(idPromocion, nombre, tipoAtraccion, atraccionesIncluidas, costo, descuento,
-					duracion, descripcion, imgURL);
+					duracion, descripcion, imgURL, estaActivo);
 		} else if (tipoPromo == 3) {
 			producto = new PromocionAbsoluta(idPromocion, nombre, tipoAtraccion, atraccionesIncluidas, costo, descuento,
-					duracion, descripcion, imgURL);
+					duracion, descripcion, imgURL, estaActivo);
 		}
 
 		return producto;
@@ -308,6 +309,17 @@ public class PromocionDAOImpl implements PromocionDAO {
 		}
 	}
 
+	private Boolean booleano(int valor) {
+		if (valor == 0) {
+			return false;
+		} else {
+			if (valor == 1)
+				return true;
+		}
+		return null;
+	}
+	
+	
 	/**
 	 * DESACTUALIZADO, BORRAR LUEGO
 	 * 

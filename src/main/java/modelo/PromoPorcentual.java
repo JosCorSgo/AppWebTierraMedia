@@ -33,13 +33,14 @@ public class PromoPorcentual extends Producto {
 	// se usa en toProducto  PromocionDAOImpl
 	public PromoPorcentual(long idPromocion, String nombre, TipoAtraccion tipoAtraccion,
 			ArrayList<Atraccion> atraccionesIncluidas, int costo, int descuento, double duracion, String descripcion,
-			String imgURL) {
+			String imgURL, Boolean estaActivo) {
 		super(idPromocion, nombre, tipoAtraccion, costo, duracion, descripcion, imgURL);
 		super.setCosto((atraccionesIncluidas.get(0).getCosto() + atraccionesIncluidas.get(1).getCosto())
 				* (100 - descuento) / 100);// Revisar que calcule bien
 		super.setDuracion(atraccionesIncluidas.get(0).getDuracion() + atraccionesIncluidas.get(1).getDuracion());
 		super.setPromo(true);
 		super.setDescuento(descuento);
+		super.setEstaActivo(estaActivo);
 		this.atraccionesIncluidas = atraccionesIncluidas;
 		this.idPromocion = idPromocion;
 

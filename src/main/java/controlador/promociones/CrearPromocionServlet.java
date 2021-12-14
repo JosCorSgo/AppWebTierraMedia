@@ -59,10 +59,22 @@ public class CrearPromocionServlet extends HttpServlet implements Servlet {
 
 		Long atr1 = Long.parseLong(req.getParameter("atraccion1"));
 		Long atr2 = Long.parseLong(req.getParameter("atraccion2"));
-		Long atr3 = (long) 1;
-		if (req.getParameter("atraccion3") != null && Integer.parseInt(req.getParameter("atraccion3")) <= 1) {
+//		Long atr3 = Long.parseLong(req.getParameter("atraccion3"));
+//		if (req.getParameter("atraccion3") == null && Integer.parseInt(req.getParameter("atraccion3")) < 1) {
+//			atr3 = Long.parseLong(req.getParameter("atraccion3"));
+//		} 
+		
+		Long atr3 ;
+		if (req.getParameter("atraccion3") == null) {
+			atr3 = (long)1;
+		} else {
 			atr3 = Long.parseLong(req.getParameter("atraccion3"));
-		} 
+		}
+		
+		
+		
+		
+		
 
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		Atraccion a1 = atraccionDAO.buscarPorIdAtraccion(atr1);

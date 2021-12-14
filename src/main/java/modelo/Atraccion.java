@@ -143,6 +143,7 @@ public class Atraccion extends Producto {
         this.img = img;
         this.setDescripcion(descripcion);
         super.esPromo = false;
+        super.setEstaActivo(true);// OJO! agregado para testear
     }
     
     //agregue

@@ -18,6 +18,7 @@ public abstract class Producto {
 	private int descuento;
 	private String descripcion;
 	private String imgURL;
+	private Boolean estaActivo;
 
 	public Map<String, String> errores;
 	public Map<String, String> errors;
@@ -226,6 +227,14 @@ public abstract class Producto {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public Boolean estaActivo() {
+		return estaActivo;
+	}
+
+	public void setEstaActivo(Boolean estaActivo) {
+		this.estaActivo = estaActivo;
 	}
 
 }

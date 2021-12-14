@@ -13,15 +13,15 @@
 			}
 
 			if (x != '3') {
-				document.getElementById("costo").setAttribute("disabled","true");
+				document.getElementById("costo").setAttribute("readonly","true");
 			} else {
-				document.getElementById("costo").removeAttribute("disabled")
+				document.getElementById("costo").removeAttribute("readonly")
 			}
 
 			if (x != '2') {
-				document.getElementById("descuento").setAttribute("disabled","true");
+				document.getElementById("descuento").setAttribute("readonly","true");
 			} else {
-				document.getElementById("descuento").removeAttribute("disabled")
+				document.getElementById("descuento").removeAttribute("readonly")
 			}
 		}
 	</script>
@@ -29,15 +29,22 @@
 
 <div class="row g-3 modal-body">
 			
-			<div class="col-md-4">
+			
+			<div class="col-sm-1">
+				<label for="formGroupExampleInput" class="form-label">ID</label>
+				<input readonly required type="text" name="id" id="id" class="form-control" 
+					placeholder="ID" value="">
+			</div>
+			
+			<div class="col-md-3">
 				<label for="formGroupExampleInput" class="form-label">Nombre</label>
 				<input required type="text" name="nombre" id="nombre" class="form-control" 
-					placeholder="Nombre" value="${promocion.nombre}">
+					placeholder="Nombre" value="">
 			</div>
 			
 			<div class="col-md-4">
 				<label for="promocion" class="form-label">Clase de Promocion</label>
-				<select name="tipoPromo" required class="form-select"
+				<select name="tipoPromo"  onchange="disable()" required class="form-select"
 					id="tipoPromocion"  aria-label="TipoPromocion">
 					<option value="" selected>Escoge...</option>
 
@@ -65,8 +72,8 @@
 					<option value="0" selected>Escoge...</option>
 
 					<c:forEach items="${listaAtracciones}" var="atraccion" varStatus="myIndex">
-						<option value="${myIndex.count}"><c:out
-						value="${myIndex.count}- ${atraccion.nombre} (${atraccion.tipo})"></c:out></option>
+						<option value="${atraccion.getIdAtraccion()}"><c:out
+						value="${atraccion.getIdAtraccion()}- ${atraccion.nombre} (${atraccion.tipo})"></c:out></option>
 					</c:forEach>
 				</select>
 			</div>
@@ -76,8 +83,8 @@
 				<select required class="form-select" id="atr2" name="atraccion2" aria-label="Atraccion2">
 					<option value="0" selected>Escoge...</option>
 					<c:forEach items="${listaAtracciones}" var="atraccion" varStatus="myIndex">
-						<option value="${myIndex.count}"><c:out
-						value="${myIndex.count}- ${atraccion.nombre} (${atraccion.tipo})"></c:out></option>
+						<option value="${atraccion.getIdAtraccion()}"><c:out
+						value="${atraccion.getIdAtraccion()}- ${atraccion.nombre} (${atraccion.tipo})"></c:out></option>
 					</c:forEach>
 				</select>
 			</div>
@@ -88,19 +95,19 @@
 					<option value="0" selected>Escoge Carajo...</option>
 					
 					<c:forEach items="${listaAtracciones}" var="atraccion" varStatus="myIndex">
-						<option value="${myIndex.count}"><c:out
-						value="${myIndex.count}- ${atraccion.nombre} (${atraccion.tipo})"></c:out></option>
+						<option value="${atraccion.getIdAtraccion()}"><c:out
+						value="${atraccion.getIdAtraccion()}- ${atraccion.nombre} (${atraccion.tipo})"></c:out></option>
 					</c:forEach>
 				</select>
 			</div>
 			
-			<div class="col-md-6">
+			<div class="col-md-3">
 				<label for="formGroupExampleInput" class="form-label">Costo</label>
 				<input type="number" min="0" required name="costo" value="0" class="form-control" 
 					id="costo" placeholder="0" >
 			</div>
 			
-			<div class="col-md-6">
+			<div class="col-md-3">
 				<label for="formGroupExampleInput" class="form-label">Descuento</label>
 				<input type="number" min="0" required type="text" name="descuento" value="0"  
 				id="descuento" class="form-control"	 placeholder="0">
@@ -109,13 +116,13 @@
 			<div class="col-md-3">
 				<label for="formGroupExampleInput" class="form-label">Duracion</label>
 				<input type="number" min="0" required type="text" name="duracion" readonly
-				 id="duracion" value="0" class="form-control" placeholder="0" hidden>
+				 id="duracion" value="0" class="form-control" placeholder="0" >
 			</div>
 			
 			<div class="col-md-3">
 				<label for="formGroupExampleInput" class="form-label">Cupo</label>
 				<input type="number" min="0" required type="text" name="cupo" readonly
-				id="cupo" value="0" class="form-control" placeholder="0" hidden>
+				id="cupo" value="0" class="form-control" placeholder="0">
 			</div>
 		
 			<div>

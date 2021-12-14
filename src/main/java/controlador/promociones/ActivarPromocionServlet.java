@@ -29,6 +29,6 @@ public class ActivarPromocionServlet extends HttpServlet {
 		
 		promocionesService.activar(idPromocion);
 		
-		resp.sendRedirect("/AppWebTierraMedia/atracciones/index.do");
+		resp.sendRedirect("/AppWebTierraMedia/promociones.do");
 	}
 }

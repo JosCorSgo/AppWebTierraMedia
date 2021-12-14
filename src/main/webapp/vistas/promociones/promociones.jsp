@@ -52,7 +52,7 @@
 		
 		
 		
-		<table class="content-table">
+<table class="content-table">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -60,7 +60,7 @@
 					<th>Precio</th>
 					<th>Duracion</th>
 					<th>Tipo</th>
-					<th>EstaActiva</th>
+					<th>Estado</th>
 					<th>Accion</th>
 				</tr>
 			</thead>
@@ -72,40 +72,39 @@
 						<td><c:out value="${promociones.costo}"></c:out></td>
 						<td><c:out value="${promociones.duracion}"></c:out></td>
 						<td><c:out value="${promociones.tipo}"></c:out></td>
-						<c:if test="${usuario.estaActivo == true }">
-							<td><span class="bg-greee" >Activo</span></td>
+						<c:if test="${!promociones.estaActivo()}">
+							<td><span>Inactivo</span></td>
+							<td><a
+								href="/AppWebTierraMedia/promociones/activar.do?id=${promociones.idProducto}"
+								class="btn-e" role="button">Activar</a></td>
 						</c:if>
-						<c:if test="${usuario.estaActivo == false }">
-							<td><span class="bg-red" >Inactivo</span></td>
+						<c:if test="${promociones.estaActivo()}">
+							<td><span>Activo</span></td>
+							<td><a
+								href="/AppWebTierraMedia/promociones/borrar.do?id=${promociones.idProducto}"
+								class="btn-a" role="button"><i class="fas fa-times-circle"></i>Desactivar</a></td>
 						</c:if>
-						<c:if test="${usuario.esAdmin == true }">
-							<td><span class="bg-greee" >Administrador</span></td>
-						</c:if>
-						<c:if test="${usuario.esAdmin == false }">
-							<td><span class="bg-red" >Cliente</span></td>
-						</c:if>
-
 						<td><c:if test="${usr.esAdmin == true}">
-						 
-						 
-						 
-						 
-						<c:choose>
-						<c:when test="${promociones.getClass().name.equals('modelo.PromocionAxB')}">
-							<c:set var="href" value="/AppWebTierraMedia/promociones/editarAxB.do?id=${promociones.idProducto}"></c:set>
-						</c:when>
-						<c:when test="${promociones.getClass().name.equals('modelo.PromocionAbsoluta')}">
-							<c:set var="href" value="/AppWebTierraMedia/promociones/editarAbsol.do?id=${promociones.idProducto}"></c:set>
-						</c:when>
-						<c:when test="${promociones.getClass().name.equals('modelo.PromoPorcentual')}">
-							<c:set var="href" value="/AppWebTierraMedia/promociones/editarPorcent.do?id=${promociones.idProducto}"></c:set>
-						</c:when>
-						</c:choose>
-								<a href="${href}" 	class="btn-e" role="button"><i class="fas fa-pencil-alt">Editar</i></a>
-								<a href="desactivarusuario.do?id=${usuario.idUsuario}" class="btn-a" role="button"><i class="fas fa-times-circle">Desactivar</i></a>
-							</c:if>
-
-						</td>
+								<c:choose>
+									<c:when
+										test="${promociones.getClass().name.equals('modelo.PromocionAxB')}">
+										<c:set var="href"
+											value="/AppWebTierraMedia/promociones/editarAxB.do?id=${promociones.idProducto}"></c:set>
+									</c:when>
+									<c:when
+										test="${promociones.getClass().name.equals('modelo.PromocionAbsoluta')}">
+										<c:set var="href"
+											value="/AppWebTierraMedia/promociones/editarAbsol.do?id=${promociones.idProducto}"></c:set>
+									</c:when>
+									<c:when
+										test="${promociones.getClass().name.equals('modelo.PromoPorcentual')}">
+										<c:set var="href"
+											value="/AppWebTierraMedia/promociones/editarPorcent.do?id=${promociones.idProducto}"></c:set>
+									</c:when>
+								</c:choose>
+								<a href="${href}" class="btn btn-light rounded-0" role="button"><i
+									class="bi bi-pencil-fill">Editar</i></a>
+							</c:if></td>
 					</tr>
 				</c:forEach>
 			</tbody>

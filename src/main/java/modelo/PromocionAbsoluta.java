@@ -37,13 +37,14 @@ public class PromocionAbsoluta extends Producto {
 		}
 		// se usa en toProducto  PromocionDAOImpl
 		public PromocionAbsoluta(long idPromocion, String nombre, TipoAtraccion tipoAtraccion, ArrayList<Atraccion> atraccionesIncluidas,
-				int costo, int descuento, double duracion, String descripcion, String imgURL) {
+				int costo, int descuento, double duracion, String descripcion, String imgURL, Boolean estaActivo) {
 			super(idPromocion, nombre, tipoAtraccion, costo, duracion, descripcion, imgURL);
 			//super.setDuracion(atraccionesIncluidas.get(0).getDuracion() + atraccionesIncluidas.get(1).getDuracion());
 			super.setPromo(true);
 			super.setDescuento(0);
 			super.setDescripcion(descripcion);
 			super.setImgURL(imgURL);
+			super.setEstaActivo(estaActivo);
 			this.atraccionesIncluidas= atraccionesIncluidas;
 			this.idPromocion = idPromocion;	}
 		

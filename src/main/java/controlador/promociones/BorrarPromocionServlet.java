@@ -30,6 +30,6 @@ public class BorrarPromocionServlet extends HttpServlet {
 		
 		promocionesService.borrar(idPromocion);
 		
-		resp.sendRedirect("/AppWebTierraMedia/promociones/promocines.do");
+		resp.sendRedirect("/AppWebTierraMedia/promociones.do");
 	}
 }
