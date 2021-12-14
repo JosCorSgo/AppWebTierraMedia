@@ -25,30 +25,7 @@
 
 </head>
 <body>
-
-<!-- comienza seccion header -->
-
-<header>
-    <div id="menu-bar" class="fas fa-bars"></div>
-
-    <a href="#" class="logo"><span>P</span>romociones</a>
-    <nav class="navbar">  
-     <a class="nav-link " href="../listarusuarios.do">Usuarios</a>
-     <a class="nav-link" href="atracciones.jsp">Atracciones</a>
-     <a class="nav-link" href="promociones.jsp">Promociones</a>
-     <a class="nav-link" href="../listarTipos.do">Tipos de Atracciones</a>
-
-</nav>
-
-   <div class= "logout">
-      <a class="btn" href="../logout">Cerrar sesion</a>
-   </div>
-
-</header>
-
-<!-- termina seccion header -->
-
-
+<jsp:include page="/partials/navadmin.jsp"></jsp:include>
 
 <!-- seccion home empieza -->
 <section class="home" id="home">

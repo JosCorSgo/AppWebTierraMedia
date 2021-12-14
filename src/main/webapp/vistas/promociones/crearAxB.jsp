@@ -16,7 +16,6 @@
 <body>
 
 
-<jsp:include page="/partials/nav.jsp"></jsp:include>
 	
 	
 	<script>

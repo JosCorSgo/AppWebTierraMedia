@@ -28,63 +28,7 @@
 </head>
 <body>
 
-
-<!-- comienza seccion header -->
-
-<header>
-    <div id="menu-bar" class="fas fa-bars"></div>
-
-    <a href="#" class="logo"><span>C</span>omprar</a>
-    
-
-    <nav class="navbar">   
-    <a class="nav-link" href="../atracciones/cliente.do">Atracciones</a>  
-
-     <a class="nav-link" href="../comprar.do?id=${usr.idUsuario}">Comprar</a>  
-     <a class="nav-link " aria-current="page" href="../itinerario.do?id=${usr.idUsuario}">Ver mi itinerario</a>
-
-</nav>
-
-   <div class= "icons">
-      <i class="fas fa-user" id="login-btn"></i>
-   </div>
-
-</header>
-
-<!-- termina seccion header -->
-
-<!-- login form container -->
-
-<div class="login-form-container">
-
-   <i class="fas fa-times" id="form-close"></i>
-
-   <form action="">
-   <h3>Usuario</h3>
-   
-	<c:choose>
-		    <c:when test="${usuario == 'Invitado'}">
-		          ${usuario}
-		          <a class="btn" href="login.jsp">Iniciar sesion</a>
-		          			
-		         </c:when>
-		         <c:otherwise>
-
-		            <p>Nombre: ${usr.nombre}</p>
-		             <p>Preferencia: ${usr.preferencia}</p>
-		          	<p>Presupuesto: ${usr.presupuesto}</p>
-		          	<p>Tiempo: ${usr.tiempoDisponible}</p>
-		          	<a class="btn" href="../logout">Cerrar sesion</a>
-		          </c:otherwise>
-		          		  
-		        </c:choose>
-   
-
-   </form>
-
-</div>
-
-
+<jsp:include page="/partials/navcliente.jsp"></jsp:include>
 	<h2>Pagina de compras de atracciones y promociones</h2>
 	<div class="container">
 	
@@ -94,15 +38,13 @@
 
 <section class="services" id="services">
    <h1 class="heading">
-   <span>s</span>
-   <span>e</span>
-   <span>r</span>
-   <span>v</span>
-   <span>i</span>
    <span>c</span>
-   <span>i</span>
    <span>o</span>
-   <span>s</span>
+   <span>m</span>
+   <span>p</span>
+   <span>r</span>
+   <span>a</span>
+   <span>r</span>
 </h1>
 
   <div class="box-container">
