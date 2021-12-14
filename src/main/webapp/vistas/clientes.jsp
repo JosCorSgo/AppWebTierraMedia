@@ -67,12 +67,13 @@
          <p>lore ipsum</p>
       </div>
       
-      <div class="box">
+<!--  <div class="box">
          <i class="fas fa-globe-asia"></i>
          <h3><a href="../itinerario.do">itinerario</a></h3>
          <p>lore ipsum</p>
       </div>
    </div>
+-->
   
 </section>
 
